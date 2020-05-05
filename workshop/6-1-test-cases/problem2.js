@@ -8,14 +8,21 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  /* Your code here */
+  if (str && typeof str !== "number") {
+    let wordArray = str.split("");
+    return wordArray[wordArray.length - 1];
+  }
 }
 
 // Step 2
 // You're given 1 test case. Add 4 more, making sure to cover all of the
 // conditions specified above (don't forget empty string and number!!)
 
-expect(lastCharacter('max'), 'x');
+expect(lastCharacter("max"), "x");
+expect(lastCharacter(""), undefined);
+expect(lastCharacter(2451), undefined);
+expect(lastCharacter("serge"), "e");
+expect(lastCharacter("exprès"), "s");
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠
@@ -34,7 +41,7 @@ expect(lastCharacter('max'), 'x');
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
