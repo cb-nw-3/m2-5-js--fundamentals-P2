@@ -31,8 +31,8 @@ function repeat(arr) {
 // Don't forget to test all of the question parameters
 expect(repeat(["Ha", 4]), "HaHaHaHa");
 expect(repeat(["", 4144]), "");
-expect(repeat([444, "lel"]), undefined);
 expect(repeat(["lul", -4]), "");
+expect(repeat([444, "lel"]), undefined);
 expect(repeat("hehe", 4), undefined);
 expect(repeat("spagatte", "boulette"), undefined);
 expect(repeat(["spagatte", "boulette"]), undefined);
