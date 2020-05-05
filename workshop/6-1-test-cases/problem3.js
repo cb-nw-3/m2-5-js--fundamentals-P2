@@ -8,12 +8,22 @@
 //   - `typeof 3` returns 'number')
 
 function sumDigits(input) {
-  // Your code here
+  let sum = input[0] + input[1];
+  if (typeof sum !== "number") {
+    return undefined;
+  } else {
+    return sum;
+  }
 }
-
 // Add 5 more test cases here! 7 total
 expect(sumDigits([2, 5]), 7);
 expect(sumDigits([-1, 0]), -1);
+
+expect(sumDigits(["a", "b"]), undefined);
+expect(sumDigits([1, "a"]), undefined);
+expect(sumDigits([10, 45]), 55);
+expect(sumDigits(["", ""]), undefined);
+expect(sumDigits([1, 2]), 3);
 
 /**
  * -------------------------------------------------------------------
@@ -22,7 +32,7 @@ expect(sumDigits([-1, 0]), -1);
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
