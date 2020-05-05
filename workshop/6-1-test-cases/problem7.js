@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 7
 // ---------
 // Step 1
@@ -13,11 +11,25 @@ let verifyEquals = require('../../assets/verify-equals');
 // f("foo", -1) // ""
 
 function repeat(arr) {
-  // Your code here
+  let string = arr[0];
+  let multiple = arr[1];
+
+  if (typeof string !== "string" || typeof multiple !== "number")
+    return undefined;
+
+  if (multiple < 0) return "";
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+
+expect(repeat(["poo", 2], "poopoo"));
+expect(repeat(["foo", 4], "foofoofoofoo"));
+expect(repeat(["poo", 0], ""));
+expect(repeat(["hello", 3], "hellohellohello"));
+expect(repeat(["go", -1], ""));
+expect(repeat([1, "x"], undefined));
+expect(repeat(["yeah!", 2], "yeah!yeah!"));
 
 /**
  * -------------------------------------------------------------------
@@ -26,7 +38,7 @@ function repeat(arr) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
