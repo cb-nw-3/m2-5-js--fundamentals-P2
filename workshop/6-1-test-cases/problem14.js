@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 14
 // ----------
 // Make this function return the input string wrapped to 40 characters per line.
@@ -23,7 +21,9 @@ expect(
 
 // Test case 2: Space after newline
 expect(
-  wrapAfter40Chars('My favourite thing about cats is all the things.'),
+  wrapAfter40Chars(
+    'My favourite thing about cats is all the things.'
+  ),
   'My favourite thing about cats is all the\nthings.'
 );
 
@@ -38,6 +38,8 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
+    console.log(
+      `⛔️ Expected “${result}” to equal “${value}”`
+    );
   }
 }

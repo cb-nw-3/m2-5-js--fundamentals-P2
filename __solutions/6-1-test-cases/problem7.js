@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 7
 // ---------
 // Step 1
@@ -16,7 +14,8 @@ function f(arr) {
   const str = arr[0];
   const count = arr[1];
 
-  if (typeof str !== 'string' || typeof count !== 'number') return undefined;
+  if (typeof str !== 'string' || typeof count !== 'number')
+    return undefined;
 
   if (count <= 0) return '';
 
