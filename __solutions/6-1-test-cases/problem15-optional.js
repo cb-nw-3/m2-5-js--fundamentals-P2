@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 function getUniqueElements(arr1, arr2) {
   const uniqueElements = [];
 
@@ -23,12 +21,16 @@ function getUniqueElements(arr1, arr2) {
 function f(input) {
   const arr1 = input[0];
   const arr2 = input[1];
-  return getUniqueElements(arr1, arr2).concat(getUniqueElements(arr2, arr1));
+  return getUniqueElements(arr1, arr2).concat(
+    getUniqueElements(arr2, arr1)
+  );
 }
 
 // Shorter
 function getUniqueElementsV2(arr1, arr2) {
-  return arr1.filter((elm) => !arr2.some((other) => elm === other));
+  return arr1.filter(
+    (elm) => !arr2.some((other) => elm === other)
+  );
 }
 
 function g(input) {
