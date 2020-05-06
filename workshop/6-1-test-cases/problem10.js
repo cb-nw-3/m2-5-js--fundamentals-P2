@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 10
 // ----------
 // Make this function return the input string, capitalized.
@@ -13,15 +11,28 @@ let verifyEquals = require('../../assets/verify-equals');
 //  - Join the results into a string
 
 function makeIntoTitle(sentence) {
-  // Your code here
+  return sentence
+    .toLowerCase()
+    .split(" ")
+    .map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
 }
 
 // Add 6 total (5 more)
 expect(
-  makeIntoTitle('the longest road is a great song'),
-  'The Longest Road Is A Great Song'
+  makeIntoTitle("the longest road is a great song"),
+  "The Longest Road Is A Great Song"
 );
-
+expect(makeIntoTitle("the amazing grace"), "The Amazing Grace");
+expect(
+  makeIntoTitle("your friendly neighbour spiderman"),
+  "Your Friendly Neighbour Spiderman"
+);
+expect(makeIntoTitle("the road to success"), "The Road To Success");
+expect(makeIntoTitle("how to make money fast"), "How To Make Money Fast");
+expect(makeIntoTitle("this is just a farewell"), "This Is Just A Farewell");
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
@@ -29,7 +40,7 @@ expect(
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
