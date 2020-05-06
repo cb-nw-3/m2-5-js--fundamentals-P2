@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 9
 // ---------
 // Make this function return the longest word in the input string. If the input
@@ -14,11 +12,29 @@ let verifyEquals = require('../../assets/verify-equals');
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+  let strArray = str.split(" ");
+  let sortedStrArr = strArray.sort(function (strA, strB) {
+    return strB.length - strA.length;
+  });
+
+  if (sortedStrArr[0] === "") {
+    return "";
+  }
+
+  if (sortedStrArr[0].length && sortedStrArr[1].length) {
+    //I return the first one that matches
+    return sortedStrArr[0];
+  }
+
+  return sortedStrArr[0];
 }
 
 // We need 5 test cases
-
+expect(longestWord("how are you mister"), "mister");
+expect(longestWord(""), "");
+expect(longestWord("Yes my name is Jack"), "name");
+expect(longestWord("can I have some cash for food"), "have");
+expect(longestWord("help me I need to code this"), "help");
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
@@ -26,7 +42,7 @@ function longestWord(str) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
