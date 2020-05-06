@@ -13,10 +13,19 @@
 
 function longestWord(str) {
   // Place solution here
+  if (str === '') return undefined;
+  let words = str.split(' ').reduce(function(longest, currentWord) {
+    return currentWord.length > longest.length ? currentWord : longest;
+  }, "");
+  return words;
 }
 
 // We need 5 test cases
-
+expect(longestWord('Hi world'), 'world');
+expect(longestWord('I want pizza'), 'pizza');
+expect(longestWord('Concordia bootcamp'), 'Concordia');
+expect(longestWord(''), undefined);
+expect(longestWord('Hello'), 'Hello');
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

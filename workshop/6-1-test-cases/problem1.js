@@ -7,7 +7,8 @@
 
 function firstLetter(str) {
   /* Your code here */
-  return 5;
+  if (str.charAt(0) === '') return undefined;
+  return str.charAt(0);
 }
 
 // Step 2
