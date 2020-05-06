@@ -8,7 +8,15 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  /* Your code here */
+  if (str === '') {
+    return undefined
+  } else if (str !== '') {
+    if (str % 1 === 0) {
+      return undefined
+    } else {
+      return str[str.length - 1]
+    }
+  }
 }
 
 // Step 2
@@ -16,6 +24,11 @@ function lastCharacter(str) {
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
+expect(lastCharacter(''), undefined);
+expect(lastCharacter('max1'), '1');
+expect(lastCharacter('maxX maxX maxX maxX'), 'X');
+expect(lastCharacter('maxX maxX maxX '), ' ');
+expect(lastCharacter(123123), undefined);
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠
@@ -27,11 +40,12 @@ expect(lastCharacter('max'), 'x');
 //
 // 😂
 
-/**
+/*
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
  * -------------------------------------------------------------------
  */
+
 function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');

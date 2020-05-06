@@ -67,6 +67,17 @@ function getFavouriteFoodEmoji(food) {
   } else if (food === 'pizza') {
     return '🍕';
   }
+
+  switch (food) {
+    case 'hamburger':
+      return '🍔'
+    case 'sushi':
+      return '🍣'
+    case 'lobster':
+      return '🦞'
+    case 'pizza':
+      return '🍕'
+  }
 }
 ```
 
@@ -85,6 +96,17 @@ function calculator(num1, num2, operation) {
   } else {
     console.error('Unrecognized operation: ', operation);
     return null;
+  }
+
+  switch (operation) {
+    case 'add':
+      return num1 + num2
+    case 'subtract':
+      return num1 - num2
+    case 'multiply':
+      return num1 * num2
+    case 'divide':
+      return num1 / num2
   }
 }
 ```

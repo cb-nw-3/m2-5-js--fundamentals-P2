@@ -6,7 +6,11 @@
 // If it's an empty string (''), return undefined.
 
 function firstLetter(str) {
-  /* Your code here */
+  if (str === '') {
+    return undefined
+  } else if (str !== ''){
+    return str[0]
+  }
 }
 
 // Step 2
@@ -23,11 +27,12 @@ expect(firstLetter(''), undefined);
 // Run this file with Node.
 // When all the tests pass, move on to the next problem
 
-/**
+/*
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
  * -------------------------------------------------------------------
  */
+
 function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');

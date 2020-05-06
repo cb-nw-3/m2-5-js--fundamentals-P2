@@ -166,9 +166,10 @@ function getLetterGrade(score) {
   } else if (score < 75) {
     return "C";
   } else if (score < 90) {
-    return "B"
+    return "B";
   } else {
     return "A";
+  }
 }
 
 function expect(result, value) {
@@ -214,7 +215,7 @@ expect(findMiddleWord('I do not enjoy bananas'), 'not');
 ```js
 function doesNameStartWithLetter(name, letter) {
   let firstLetter = name[0];
-  if ((firstLetter = letter)) {
+  if (firstLetter === letter) {
     return true;
   } else {
     return false;
