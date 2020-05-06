@@ -6,8 +6,12 @@
 // If it's an empty string (''), return undefined.
 
 function firstLetter(str) {
-  /* Your code here */
-  return 5;
+  if (str === "") {
+    return;
+  } else {
+    let stringFirst = str.split("");
+    return stringFirst[0];
+  }
 }
 
 // Step 2
