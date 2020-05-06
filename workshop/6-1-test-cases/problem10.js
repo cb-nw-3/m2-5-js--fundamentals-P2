@@ -30,6 +30,7 @@ expect(
   makeIntoTitle("your friendly neighbour spiderman"),
   "Your Friendly Neighbour Spiderman"
 );
+
 expect(makeIntoTitle("the road to success"), "The Road To Success");
 expect(makeIntoTitle("how to make money fast"), "How To Make Money Fast");
 expect(makeIntoTitle("this is just a farewell"), "This Is Just A Farewell");
