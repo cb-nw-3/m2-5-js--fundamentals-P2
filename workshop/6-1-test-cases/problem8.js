@@ -14,16 +14,36 @@
 //  - Convert the filled array into a string (use the join method) and return it
 
 function reverse(str) {
-  // Your code here
+  if (typeof str === 'string') {
+    let strArr = str.split('');
+    let newArr = [];
+    let newStr = '';
+
+    for (let i = 0; i < str.length; i++) {
+      newArr.unshift(strArr[i]);
+    }
+
+    newStr = newArr.join('');
+    return newStr
+  } else {
+    return undefined
+  }
 }
 
 // We need 5 test cases
+expect(reverse('asdfasdf'), 'fdsafdsa')
+expect(reverse(12341324), undefined)
+expect(reverse('1234'), '4321')
+expect(reverse('asd ddsa'), 'asdd dsa')
+expect(reverse(true), undefined)
+expect(reverse(123 + "asd" * 0), undefined)
 
-/**
+/*
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
  * -------------------------------------------------------------------
  */
+
 function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');

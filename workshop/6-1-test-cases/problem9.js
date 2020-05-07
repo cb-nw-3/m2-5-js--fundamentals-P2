@@ -17,11 +17,12 @@ function longestWord(str) {
 
 // We need 5 test cases
 
-/**
+/*
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
  * -------------------------------------------------------------------
  */
+
 function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');

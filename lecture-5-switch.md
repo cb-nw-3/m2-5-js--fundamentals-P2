@@ -70,13 +70,13 @@ function getFavouriteFoodEmoji(food) {
 
   switch (food) {
     case 'hamburger':
-      return '🍔'
+      return '🍔';
     case 'sushi':
-      return '🍣'
+      return '🍣';
     case 'lobster':
-      return '🦞'
+      return '🦞';
     case 'pizza':
-      return '🍕'
+      return '🍕';
   }
 }
 ```
@@ -100,13 +100,16 @@ function calculator(num1, num2, operation) {
 
   switch (operation) {
     case 'add':
-      return num1 + num2
+      return num1 + num2;
     case 'subtract':
-      return num1 - num2
+      return num1 - num2;
     case 'multiply':
-      return num1 * num2
+      return num1 * num2;
     case 'divide':
-      return num1 / num2
+      return num1 / num2;
+    default:
+      console.error('Unrecognized operation: ', operation);
+      return null;
   }
 }
 ```
@@ -117,10 +120,34 @@ function calculator(num1, num2, operation) {
 function greetUser(hourOfDay) {
   if (hourOfDay <= 11) {
     return 'Good morning';
-  } else if (hourOfDay < 6) {
+  } else if (hourOfDay < 18) {
     return 'Good afternoon';
   } else {
     return 'Good evening';
+  }
+
+  switch (hourOfDay) {
+    case = 1:
+    case = 2:
+    case = 3:
+    case = 4:
+    case = 5:
+    case = 6:
+    case = 7:
+    case = 8:
+    case = 9:
+    case = 10:
+    case = 11:
+      return 'Good morning';
+    case = 12:
+    case = 13:
+    case = 14:
+    case = 15:
+    case = 16:
+    case = 17:
+      return 'Good afternoon';
+    default:
+      return 'Good evening';
   }
 }
 ```

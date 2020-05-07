@@ -8,10 +8,12 @@
 // getLetterAtIndex("", 4);      // undefined
 // getLetterAtIndex("abc", 0);   // a
 
-function getLetterAtIndex(arr) {
-
-  return arr[i]
-  // Your code here
+function getLetterAtIndex(string, i) {
+  if (typeof i === 'number') {
+    return string[i]
+  } else {
+    return undefined
+  }
 }
 
 // Add 6 more test cases
@@ -25,6 +27,7 @@ expect(getLetterAtIndex(0, 'goddbye'), undefined);
 expect(getLetterAtIndex('asd123!"sd_', 6), '!');
 expect(getLetterAtIndex('goodbye', 10), undefined);
 expect(getLetterAtIndex(), undefined);
+expect(getLetterAtIndex('goodbye', 0.3), undefined);
 
 /*
  * -------------------------------------------------------------------
