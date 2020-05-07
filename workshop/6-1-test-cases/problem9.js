@@ -13,10 +13,26 @@
 
 function longestWord(str) {
   // Place solution here
+  if (typeof str !== "string") {
+    return undefined;
+  } else {
+    let strArr = str.split(" ");
+    let longest = "";
+    strArr.forEach((el) => {
+      if (el.length >= longest.length) {
+        longest = el;
+      }
+    });
+    return longest;
+  }
 }
 
 // We need 5 test cases
-
+expect(longestWord(""), "");
+expect(longestWord("hey hi hello"), "hello");
+expect(longestWord("bobby pizza"), "pizza");
+expect(longestWord(123), undefined);
+expect(longestWord([]), undefined);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
@@ -24,10 +40,8 @@ function longestWord(str) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

@@ -12,10 +12,34 @@
 
 function repeat(arr) {
   // Your code here
+  if (
+    typeof arr[0] !== "string" ||
+    typeof arr[1] !== "number" ||
+    typeof arr !== "object" ||
+    arr.length !== 2
+  ) {
+    return undefined;
+  } else if (arr[1] <= 0) {
+    return "";
+  } else {
+    let str = "";
+    for (let i = 0; i < arr[1]; i++) {
+      str += `${arr[0]}`;
+    }
+    return str;
+  }
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+
+expect(repeat(["blah", 3]), "blahblahblah");
+expect(repeat(["blah", 0]), "");
+expect(repeat(["blah", 3, 2]), undefined);
+expect(repeat(["orange", 1]), "orange");
+expect(repeat([123, 3]), undefined);
+expect(repeat(["", 3]), "");
+expect(repeat([["blah", "blah2"], 3]), undefined);
 
 /**
  * -------------------------------------------------------------------
@@ -24,10 +48,8 @@ function repeat(arr) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

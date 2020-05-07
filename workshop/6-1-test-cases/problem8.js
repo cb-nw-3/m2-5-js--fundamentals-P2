@@ -15,9 +15,23 @@
 
 function reverse(str) {
   // Your code here
+  if (typeof str !== "string") {
+    return undefined;
+  } else {
+    let result = [];
+    for (let i = 0; i < str.length; i++) {
+      result.unshift(str[i]);
+    }
+    return result.join("");
+  }
 }
 
 // We need 5 test cases
+expect(reverse("hello"), "olleh");
+expect(reverse("how are you"), "uoy era woh");
+expect(reverse([]), undefined);
+expect(reverse(""), "");
+expect(reverse("123"), "321");
 
 /**
  * -------------------------------------------------------------------
@@ -26,10 +40,8 @@ function reverse(str) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }
