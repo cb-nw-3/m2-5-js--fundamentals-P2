@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 10
 // ----------
 // Make this function return the input string, capitalized.
@@ -13,14 +11,37 @@ let verifyEquals = require('../../assets/verify-equals');
 //  - Join the results into a string
 
 function makeIntoTitle(sentence) {
-  // Your code here
+  if (typeof sentence === "string") {
+    let newSentence = [];
+    let splitSentence = sentence.split(" ");
+
+    splitSentence.forEach(function (str) {
+      let strArray = str.split("");
+      let capitalizedWord = [];
+      for (let i = 0; i < strArray.length; i++) {
+        if (i === 0) {
+          capitalizedWord.push(strArray[i].toUpperCase());
+        } else {
+          capitalizedWord.push(strArray[i].toLowerCase());
+        }
+      }
+      newSentence.push(capitalizedWord.join(""));
+    });
+
+    return newSentence.join(" ");
+  }
 }
 
 // Add 6 total (5 more)
 expect(
-  makeIntoTitle('the longest road is a great song'),
-  'The Longest Road Is A Great Song'
+  makeIntoTitle("the longest road is a great song"),
+  "The Longest Road Is A Great Song"
 );
+expect(makeIntoTitle("war and peace"), "War And Peace");
+expect(makeIntoTitle("the", "longest", "road", "is a great song"), "The");
+expect(makeIntoTitle("ALL YOUR BASE ARE BELONG"), "All Your Base Are Belong");
+expect(makeIntoTitle(12412), undefined);
+expect(makeIntoTitle(["war", "and", "peace"]), undefined);
 
 /**
  * -------------------------------------------------------------------
@@ -29,7 +50,7 @@ expect(
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }

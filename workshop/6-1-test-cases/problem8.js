@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 8
 // ---------
 // Write a function that returns the input string, reversed.
@@ -16,10 +14,23 @@ let verifyEquals = require('../../assets/verify-equals');
 //  - Convert the filled array into a string (use the join method) and return it
 
 function reverse(str) {
-  // Your code here
+  if (typeof str === "string") {
+    let strArray = str.split("");
+    let reverseArray = [];
+    for (let i = strArray.length - 1; i >= 0; i--) {
+      reverseArray.push(strArray[i]);
+    }
+
+    return reverseArray.join("");
+  }
 }
 
 // We need 5 test cases
+expect(reverse("banana"), "ananab");
+expect(reverse(243), undefined);
+expect(reverse(["b", "a", "n", "a", "n", "a"]), undefined);
+expect(reverse(["car", "pool"].join("")), "looprac");
+expect(reverse("banana".lenght), undefined);
 
 /**
  * -------------------------------------------------------------------
@@ -28,7 +39,7 @@ function reverse(str) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
