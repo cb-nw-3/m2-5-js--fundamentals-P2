@@ -14,37 +14,28 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
-let buttonId1 = document.querySelector("#btn-1");
-let buttonId2 = document.querySelector("#btn-2");
-let buttonId3 = document.querySelector("#btn-3");
-let buttonId4 = document.querySelector("#btn-4");
-button.addEventListener("click", function animation(button) {
-  switch (button) {
-    case buttonId1:
-      buttonId1.style.visibility = "hidden";
 
-    case buttonId2:
-      buttonId2.style.backgroundColor = "crimson";
-
-    case buttonId3:
-      buttonId3.style.backgroundColor = "lightblue";
-    case buttonId4:
-      buttonId4.classList.toggle = "jitters";
-  }
-});
+let buttonList = document.querySelector("#btn-list");
 
 function animation(event) {
-  const buttonId = event.target.id;
+  let buttonId = event.target.id;
+  let buttonElem = document.getElementById(buttonId);
   switch (buttonId) {
-    case "#btn-1":
+    case "btn-1":
+      buttonElem.style.visibility = "hidden";
+      break;
+    case "btn-2":
+      buttonElem.style.backgroundColor = "crimson";
+      break;
+    case "btn-3":
+      buttonElem.style.backgroundColor = "lightblue";
+      break;
+    case "btn-4":
+      buttonElem.classList.add("jitters");
+      break;
+    default:
+      break;
   }
 }
 
-for (let i = 1; i <= 20; i++) {
-  const button = document.createElement("button");
-  button.innerText = i;
-  button.id = `btn-${i}`;
-  mainDiv.appendChild(button);
-
-  button.addEventListener("click", turnGreen);
-}
+buttonList.addEventListener("click", animation);
