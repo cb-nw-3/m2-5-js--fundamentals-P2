@@ -12,12 +12,38 @@
 
 function makeIntoTitle(sentence) {
   // Your code here
+  let words = sentence.toLowerCase().split(' ');
+  
+  for (let i = 0; i < words.length; i++){
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1);
+  }
+  return words.join(' ');
 }
 
 // Add 6 total (5 more)
 expect(
   makeIntoTitle('the longest road is a great song'),
   'The Longest Road Is A Great Song'
+);
+expect(
+  makeIntoTitle('hello world'),
+  'Hello World'
+);
+expect(
+  makeIntoTitle('HI'),
+  'Hi'
+);
+expect(
+  makeIntoTitle('0'),
+  '0'
+);
+expect(
+  makeIntoTitle(' '),
+  ' '
+);
+expect(
+  makeIntoTitle('i WOULD like pizza'),
+  'I Would Like Pizza'
 );
 
 /**

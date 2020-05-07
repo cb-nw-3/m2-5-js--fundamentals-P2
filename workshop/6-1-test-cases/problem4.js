@@ -8,11 +8,10 @@
 // getLetterAtIndex("", 4);      // undefined
 // getLetterAtIndex("abc", 0);   // a
 
-function getLetterAtIndex(arr) {
+function getLetterAtIndex(string, index) {
   // Your code here
-  // let returnLetter = arr.split("");
-  if (arr.charAt(0) === '') return undefined;
-  return arr.charAt(arr[1]);
+  if (string.charAt(0) === '') return undefined;
+  return string.charAt(index);
 }
 
 // Add 6 more test cases
