@@ -7,11 +7,24 @@
 // JAVASCRIPT -> No
 
 function checkIsPalindrome(inputString) {
-  // Your code here
+  const splitString = inputString.split("");
+  const reverseArray = splitString.reverse();
+  const reversedString = reverseArray.join("");
+
+  if (reversedString !== inputString) {
+    return "No";
+  } else {
+    return "Yes";
+  }
 }
 
 // Add 6 test cases
-
+expect(checkIsPalindrome("radar"), "Yes");
+expect(checkIsPalindrome("java"), "No");
+expect(checkIsPalindrome("script"), "No");
+expect(checkIsPalindrome("laval"), "Yes");
+expect(checkIsPalindrome("anana"), "Yes");
+expect(checkIsPalindrome("cheese"), "No");
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
