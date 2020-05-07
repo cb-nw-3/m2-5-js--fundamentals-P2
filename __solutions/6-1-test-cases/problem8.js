@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 8
 // ---------
 // Write a function that returns the input string, reversed.

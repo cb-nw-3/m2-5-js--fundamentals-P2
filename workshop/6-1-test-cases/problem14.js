@@ -35,8 +35,15 @@ expect(
 
 // Test case 2: Space after newline
 expect(
+<<<<<<< HEAD
   wrapAfter40Chars("My favourite thing about cats is all the things."),
   "My favourite thing about cats is all the\nthings."
+=======
+  wrapAfter40Chars(
+    'My favourite thing about cats is all the things.'
+  ),
+  'My favourite thing about cats is all the\nthings.'
+>>>>>>> parent/master
 );
 
 // Add 4 more test cases
@@ -50,6 +57,8 @@ function expect(result, value) {
   if (result === value) {
     console.log("✅ Test succeeded");
   } else {
-    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
+    console.log(
+      `⛔️ Expected “${result}” to equal “${value}”`
+    );
   }
 }

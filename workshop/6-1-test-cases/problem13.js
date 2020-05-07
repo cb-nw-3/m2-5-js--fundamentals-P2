@@ -34,6 +34,8 @@ function expect(result, value) {
   if (result === value) {
     console.log("✅ Test succeeded");
   } else {
-    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
+    console.log(
+      `⛔️ Expected “${result}” to equal “${value}”`
+    );
   }
 }
