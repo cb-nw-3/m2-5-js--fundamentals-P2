@@ -9,6 +9,8 @@
 // getLetterAtIndex("abc", 0);   // a
 
 function getLetterAtIndex(arr) {
+  
+    return arr[0].indexOf(arr[1]);
   // Your code here
 }
 
