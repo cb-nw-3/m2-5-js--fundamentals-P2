@@ -8,7 +8,13 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  /* Your code here */
+  if (typeof str === "string" && Number(str) != str) {
+    let last = str.length - 1;
+    let strArray = str.split('');
+    return strArray[last];
+  } else {
+    return;
+  }
 }
 
 // Step 2
@@ -16,8 +22,18 @@ function lastCharacter(str) {
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
+expect(lastCharacter('joe'), 'e');
+expect(lastCharacter(''), undefined);
+expect(lastCharacter('3'), undefined);
+expect(lastCharacter('bob'), 'b');
 
 // Add 4 more test cases here!
+
+expect(lastCharacter([1, 2, 3]), undefined);
+expect(lastCharacter(3 + 4), undefined);
+expect(lastCharacter({}), undefined);
+expect(lastCharacter('JEREMIAH'), 'H');
+
 // 🌠 NOTE 🌠
 // Be creative with your tests!
 // There's an old joke about QA (Quality Assurance) testers:
