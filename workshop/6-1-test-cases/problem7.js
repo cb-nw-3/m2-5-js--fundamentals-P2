@@ -17,6 +17,14 @@ function repeat(arr) {
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
 
+expect(repeat("foo", 3), "foofoofoo");
+expect(repeat("3", 9), "333333333");
+expect(repeat("what", -1), "");
+expect(repeat(9), undefined);
+expect(repeat(), undefined);
+expect(repeat(3, 3), undefined);
+expect(repeat({}), undefined);
+
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
