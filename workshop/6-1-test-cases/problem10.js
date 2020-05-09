@@ -12,13 +12,26 @@
 
 function makeIntoTitle(sentence) {
   // Your code here
+  const words = sentence.split(' ');
+  let capitalizedWords = [];
+
+  for(i = 0; i < words.length; i++) {
+    const capitalizedWord = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+    capitalizedWords.push(capitalizedWord);
+  }
+  return capitalizedWords.join(' ');
 }
 
 // Add 6 total (5 more)
 expect(
-  makeIntoTitle('the longest road is a great song'),
-  'The Longest Road Is A Great Song'
-);
+  makeIntoTitle('the longest road is a great song'), 'The Longest Road Is A Great Song');
+  
+  expect(makeIntoTitle('ALL CAPS'),'All Caps');
+  expect(makeIntoTitle('If It\'s Already Done'),'If It\'s Already Done');
+  expect(makeIntoTitle('my name is Kolby mckeown'),'My Name Is Kolby Mckeown');
+  expect(makeIntoTitle('a b c d e f'),'A B C D E F');
+  expect(makeIntoTitle('my favorite number is 16'),'My Favorite Number Is 16');
+  expect(makeIntoTitle('HELLO'),'Hello');
 
 /**
  * -------------------------------------------------------------------

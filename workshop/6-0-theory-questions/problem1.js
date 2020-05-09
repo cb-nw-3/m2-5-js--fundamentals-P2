@@ -19,25 +19,25 @@ function reverseString(str) {
 }
 
 // Expand each of the following and get the result of the expression
-// Q1
+// Q1 Answer = 9
 square(decrement(square(decrement(3))));
 
 
 
 
-// Q2
+// Q2 Answer = 79
 decrement(decrement(square(square(3))));
 
 
 
 
-// Q3
+// Q3 Answer = olleholleh
 duplicateString(reverseString("hello"));
 
 
 
 
-// Q4
+// Q4 Answer = oofoofoofoof
 reverseString(duplicateString(duplicateString("foo")));
 
 

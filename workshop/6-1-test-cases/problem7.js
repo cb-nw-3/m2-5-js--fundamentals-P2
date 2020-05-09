@@ -11,11 +11,34 @@
 // f("foo", -1) // ""
 
 function repeat(arr) {
-  // Your code here
+  const str = arr[0];
+  const count = arr[1];
+
+  if (typeof str !== 'string' || typeof count !== 'number') {
+    return undefined;
+  }  else if (count <= 0) {
+    return '';
+  }
+    let result = '';
+    
+    for (i = 0; i < count; i++) {
+      result = result + str;
+    }
+    return result;
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+
+  expect(repeat(['test', 2]), 'testtest');
+  expect(repeat(['test', 2]), 'testtest');
+  expect(repeat(['hello', 5]), 'hellohellohellohellohello');
+  expect(repeat([1, 2]), undefined);
+  expect(repeat(['should be an empty string', -1]), '');
+  expect(repeat(['test', -15]), '');
+  expect(repeat(['test', 3]), 'testtesttest');
+  expect(repeat(['test', 0]), '');
+
 
 /**
  * -------------------------------------------------------------------

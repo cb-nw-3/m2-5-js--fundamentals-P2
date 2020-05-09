@@ -11,7 +11,7 @@ function checkIsPalindrome(inputString) {
 }
 
 // Add 6 test cases
-
+expect(checkIsPalindrome(''), '');
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

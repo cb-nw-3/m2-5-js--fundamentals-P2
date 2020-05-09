@@ -9,13 +9,25 @@
 
 function lastCharacter(str) {
   /* Your code here */
+  if (typeof str !== 'string') {
+    return undefined;
+  } else if (str.charAt(str.length-1) === '') {
+    return undefined;
+  } else {
+    return str.charAt(str.length-1);
+  };
 }
-
+// *** str.charAt is not a function??
 // Step 2
 // You're given 1 test case. Add 4 more, making sure to cover all of the
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
+expect(lastCharacter(''), undefined);
+expect(lastCharacter(5), undefined);
+expect(lastCharacter('Oh hey, thanks for checking my code!'), '!');
+expect(lastCharacter('This is pretty exciting'), 'g');
+
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠

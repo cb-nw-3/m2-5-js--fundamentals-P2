@@ -15,9 +15,23 @@
 
 function reverse(str) {
   // Your code here
+  let reversed = '';
+  if (typeof str !== 'string') {
+    return undefined
+  } else {
+    for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str.charAt(i);
+    }
+    return reversed;
+  }
 }
 
 // We need 5 test cases
+expect(reverse('hello'), 'olleh')
+expect(reverse('my name is:'), ':si eman ym')
+expect(reverse(15), undefined)
+expect(reverse(':si ega ym'), 'my age is:')
+expect(reverse('test'), 'tset')
 
 /**
  * -------------------------------------------------------------------

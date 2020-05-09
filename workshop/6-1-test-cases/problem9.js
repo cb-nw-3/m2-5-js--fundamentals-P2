@@ -13,9 +13,22 @@
 
 function longestWord(str) {
   // Place solution here
+  let string = str.split(" ", str.length)
+  let long = '';
+
+  for(i = 0; i < string.length; i++) {
+    if (long.length <= string[i].length)
+    long = string[i];
+  }
+  return long;
 }
 
 // We need 5 test cases
+expect(longestWord('hi who where'), 'where');
+expect(longestWord(''), '');
+expect(longestWord('the who why'), 'why');
+expect(longestWord('a ab abc abcd abcde'), 'abcde');
+expect(longestWord('hello'), 'hello');
 
 /**
  * -------------------------------------------------------------------

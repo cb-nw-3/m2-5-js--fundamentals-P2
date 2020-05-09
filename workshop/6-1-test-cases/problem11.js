@@ -1,4 +1,4 @@
-let verifyEquals = require('./verify-equals.js');
+// let verifyEquals = require('./verify-equals.js');
 
 // Problem 11
 // ----------
