@@ -100,7 +100,5 @@ function resetButtons() {
   btn3Toggled = true;
   btn4Toggled = true;
 
-  btnArray.forEach(function (item) {
-    toggleEffect(item);
-  });
+  btnArray.forEach(toggleEffect);
 }
