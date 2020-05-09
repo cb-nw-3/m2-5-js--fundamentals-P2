@@ -9,9 +9,12 @@
 // getLetterAtIndex("abc", 0);   // a
 
 function getLetterAtIndex(string, i) {
+  // check if argument i is a number
   if (typeof i === 'number') {
+    // return the character at the index
     return string[i]
   } else {
+    // returns undefined if string is a number or if i is a string
     return undefined
   }
 }

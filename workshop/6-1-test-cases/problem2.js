@@ -1,6 +1,5 @@
 // Problem 2
 // ---------
-
 // Step 1
 // Write a function that returns the LAST character of the string that is
 // passed to it.
@@ -8,12 +7,15 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
+  // check if string is empty
   if (str === '') {
     return undefined
   } else if (str !== '') {
+    // check if argument is a number
     if (str % 1 === 0) {
       return undefined
     } else {
+      // return last character if not an empty string
       return str[str.length - 1]
     }
   }

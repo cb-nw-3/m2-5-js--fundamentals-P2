@@ -29,11 +29,12 @@ expect(
 
 // Add 4 more test cases
 
-/**
+/*
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
  * -------------------------------------------------------------------
  */
+
 function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');

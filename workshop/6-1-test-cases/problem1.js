@@ -6,8 +6,10 @@
 // If it's an empty string (''), return undefined.
 
 function firstLetter(str) {
+  // check if string is empty
   if (str === '') {
     return undefined
+  // return first character if not empty
   } else if (str !== ''){
     return str[0]
   }

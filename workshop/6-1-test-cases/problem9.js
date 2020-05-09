@@ -12,10 +12,37 @@
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+  // check if argument is a string
+  if (typeof str === 'string') {
+    // check if string is empty
+    if (str === '') {
+      return ''
+    } else {
+      // split the string in an array of each word
+      let strArr = str.split(' ');
+      // initialize the variable longest word
+      let longestWord = '';
+      for (let i = 0; i < strArr.length; i++) {
+        // check if current word is longer than variable holder
+        if (strArr[i].length >= longestWord.length) {
+          // replace if longer
+          longestWord = strArr[i];
+        }
+      }
+      return longestWord
+    }
+  } else {
+    return undefined
+  }
 }
 
 // We need 5 test cases
+expect(longestWord('asdf sdf df d asdfasdfasd'), 'asdfasdfasd');
+expect(longestWord('1'), '1');
+expect(longestWord(123), undefined);
+expect(longestWord('asdf sdf df d qwer zxcv gfds'), 'gfds');
+expect(longestWord('asdf sdf df d zxcv asdf qwer'), 'qwer');
+expect(longestWord(''), '');
 
 /*
  * -------------------------------------------------------------------

@@ -8,11 +8,13 @@
 //   - `typeof 3` returns 'number')
 
 function sumDigits(input) {
+  // check if argument is an array of two numbers
   if (
     typeof input[0] === "number" && 
     typeof input[1] === "number" && 
     input.length === 2
   ) {
+    // return sum if true
     return input[0] + input[1]
   } else {
     return undefined

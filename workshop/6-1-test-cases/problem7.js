@@ -11,16 +11,21 @@
 // f("foo", -1) // ""
 
 function repeat(arr) {
+  // check if argument is an array of a string and a number
   if (
     arr.length === 2 && 
     typeof arr[1] === 'number' && 
     typeof arr[0] === 'string'
   ) {
+    // check if number is positive
     if (arr[1] > 0) {
+      // initialize variable
       let word = '';
+      // add the argument string until loop over
       for (let i = 0; i < arr[1]; i++) {
         word += arr[0];
       }
+      // return new string
       return word
     } else {
       return ''

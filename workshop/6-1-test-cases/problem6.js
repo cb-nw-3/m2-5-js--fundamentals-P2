@@ -17,11 +17,13 @@
 // f(["spoof", 10, 10]); // undefined
 
 function calculator(arr) {
+  // check if argument is an array of 3 and two numbers
   if (
     arr.length === 3 && 
-    typeof arr[1] !== 'string' && 
-    typeof arr[2] !== 'string'
+    typeof arr[1] === 'number' && 
+    typeof arr[2] === 'number'
   ) {
+    // return different operation depending on string
     switch (arr[0]) {
       case 'add':
         return arr[1] + arr[2];

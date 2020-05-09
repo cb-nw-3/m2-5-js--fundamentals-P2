@@ -14,15 +14,20 @@
 //  - Convert the filled array into a string (use the join method) and return it
 
 function reverse(str) {
+  // check if argument is string
   if (typeof str === 'string') {
+    // split string in an array of all characters
     let strArr = str.split('');
+    // initialize new array
     let newArr = [];
+    // initialize new string
     let newStr = '';
-
+    // loop through string in array 
     for (let i = 0; i < str.length; i++) {
+      // add the element at beginning
       newArr.unshift(strArr[i]);
     }
-
+    // join the new array to the new string
     newStr = newArr.join('');
     return newStr
   } else {
