@@ -14,7 +14,7 @@ function repeat(arr) {
   // Your code here
   let stg = arr[0];
   let num = arr[1];
-  let adding = '';
+  // let adding = '';
 
   if (typeof stg !== 'string' || typeof num !== 'number'){
     return undefined
@@ -22,10 +22,12 @@ function repeat(arr) {
     return '';
   }
 
-  for (let i = 0; i < num; i++) {
-    adding = adding + stg;
-  }
-  return adding;
+  return stg.repeat(num);
+
+  // for (let i = 0; i < num; i++) {
+  //   adding = adding + stg;
+  // }
+  // return adding;
 }
 
 // We need 7 test cases.

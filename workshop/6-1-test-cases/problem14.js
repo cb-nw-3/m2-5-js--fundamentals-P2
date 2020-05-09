@@ -9,7 +9,24 @@
 
 function wrapAfter40Chars(str) {
   // Your code here!
+  let phrase = str.split('');
+  let newLine = '';
+  let letter = 0;
+
+  while (letter < str.length){
+    if (letter % 40 === 0 && letter > 0) {
+      newLine += '\n';
+      if (phrase[letter] !== '') {
+        newLine += phrase[letter];
+      }
+    } else {
+      newLine += phrase[letter];
+    }
+    letter++;
+  }
+  return newLine;
 }
+
 
 // Test case 1: No space after newline
 expect(
@@ -28,6 +45,32 @@ expect(
 );
 
 // Add 4 more test cases
+expect(
+  wrapAfter40Chars(
+    'Hello!'
+  ),
+  'Hello!'
+);
+expect(
+  wrapAfter40Chars(
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'
+  ),
+  'Lorem Ipsum is simply dummy text of the \nprinting and typesetting industry. Lorem \nIpsum has been the industry'
+);
+
+expect(
+  wrapAfter40Chars(
+    '123'
+  ),
+  '123'
+);
+
+expect(
+  wrapAfter40Chars(
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum'
+  ),
+  'Lorem Ipsum is simply dummy text of the \nprinting and typesetting industry. Lorem \nIpsum'
+);
 
 /**
  * -------------------------------------------------------------------

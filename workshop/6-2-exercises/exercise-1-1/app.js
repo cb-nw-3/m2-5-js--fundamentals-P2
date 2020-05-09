@@ -14,3 +14,27 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
+
+let buttons = document.querySelector('#btn-list');
+
+function clicked (item) {
+    let buttonId = item.target.id;
+    let buttonClicked = document.getElementById(buttonId);
+    
+    switch (buttonId) {
+        case 'btn-1':
+            buttonClicked.style.visibility = 'hidden';
+            break;
+        case 'btn-2':
+            buttonClicked.style.background = 'crimson';
+            break;
+        case 'btn-3':
+            buttonClicked.style.background = 'lightblue';
+            break;
+        case 'btn-4':
+            buttonClicked.classList.add('jitters');
+            break;
+    }
+}
+
+buttons.addEventListener('click', clicked);

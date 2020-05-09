@@ -8,9 +8,21 @@
 
 function checkIsPalindrome(inputString) {
   // Your code here
+  let reverseWord = inputString.toString().split('').reverse().join('');
+  if (inputString === reverseWord) {
+    return 'Yes';
+  } 
+  return 'No'
 }
 
 // Add 6 test cases
+expect(checkIsPalindrome('radar'), 'Yes')
+expect(checkIsPalindrome('JAVASCRIPT'), 'No')
+expect(checkIsPalindrome('Ovo'), 'No')
+expect(checkIsPalindrome('OvO'), 'Yes')
+expect(checkIsPalindrome(121), 'No')
+expect(checkIsPalindrome('121'), 'Yes')
+
 
 /**
  * -------------------------------------------------------------------
