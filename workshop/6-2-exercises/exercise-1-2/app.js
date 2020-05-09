@@ -20,3 +20,35 @@
 // Because we are now going to work with the opacity and background of the buttons,
 // they need to be set here. So that they are referencable via the the style attribute.
 // initialize the background color for all of the buttons in here. (for loop)
+let btns = document.querySelectorAll("button");
+btns.forEach((btn) => {
+  btn.style.backgroundColor = "gold";
+  btn.addEventListener("click", btnClick);
+});
+
+function btnClick(event) {
+  switch (event.target.id) {
+    case "btn-1": {
+      let opacity = event.target.style.opacity;
+      if (opacity === "0") event.target.style.opacity = "1";
+      else event.target.style.opacity = "0";
+      break;
+    }
+    case "btn-2": {
+      let color = event.target.style.backgroundColor;
+      if (color === "gold") event.target.style.backgroundColor = "crimson";
+      else event.target.style.backgroundColor = "gold";
+      break;
+    }
+    case "btn-3": {
+      let color = event.target.style.backgroundColor;
+      if (color === "gold") event.target.style.backgroundColor = "lightblue";
+      else event.target.style.backgroundColor = "gold";
+      break;
+    }
+    case "btn-4": {
+      event.target.classList.toggle("jitters");
+      break;
+    }
+  }
+}

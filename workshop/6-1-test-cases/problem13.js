@@ -7,11 +7,18 @@
 // JAVASCRIPT -> No
 
 function checkIsPalindrome(inputString) {
-  // Your code here
+  if (typeof inputString !== "string") return false;
+  let reverse = inputString.split("").reverse().join("");
+  return inputString.toLowerCase() === reverse.toLowerCase();
 }
 
 // Add 6 test cases
-
+expect(checkIsPalindrome("RADAR"), true);
+expect(checkIsPalindrome("RADARS"), false);
+expect(checkIsPalindrome(true), false);
+expect(checkIsPalindrome(2), false);
+expect(checkIsPalindrome("abba"), true);
+expect(checkIsPalindrome("abGba"), true);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
@@ -19,10 +26,8 @@ function checkIsPalindrome(inputString) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

@@ -17,13 +17,41 @@
 // f(["spoof", 10, 10]); // undefined
 
 function calculator(arr) {
-  // Your code here
+  if (typeof arr !== "object" || arr.length < 3) return undefined;
+  let operations = ["add", "sub", "mult"];
+  if (typeof arr[0] !== "string" || !operations.includes(arr[0]))
+    return undefined;
+  let operation = arr.splice(0, 1);
+  let validNumArray = arr.every((item) => typeof item === "number");
+  if (!validNumArray) return undefined;
+
+  return arr.reduce((a, b) => {
+    switch (operation[0]) {
+      case "add": {
+        return a + b;
+      }
+      case "sub": {
+        return a - b;
+      }
+      case "mult": {
+        return a * b;
+      }
+      default:
+        return 0;
+    }
+  });
 }
 
 // Step 2
 // We need 8 total test cases. The first two is provided.
-expect(calculator(['mult', 2, 4]), 8);
-expect(calculator(['add', 2, 4]), 6);
+expect(calculator(["mult", 2, 4]), 8);
+expect(calculator(["add", 2, 4]), 6);
+expect(calculator(["sub", 2, 4]), -2);
+expect(calculator(["invalid", 2, 4]), undefined);
+expect(calculator(["add", 2, 4, 6]), 12);
+expect(calculator(["add", true, 4, 6]), undefined);
+expect(calculator(["add", 1, 4, 6, 100]), 111);
+expect(calculator(["mult", 4]), undefined);
 
 /**
  * -------------------------------------------------------------------
@@ -32,10 +60,8 @@ expect(calculator(['add', 2, 4]), 6);
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }
