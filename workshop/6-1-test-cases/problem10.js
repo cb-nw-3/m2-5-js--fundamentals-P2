@@ -11,7 +11,26 @@
 //  - Join the results into a string
 
 function makeIntoTitle(sentence) {
-  // Your code here
+
+  if (typeof(sentence) != 'string') {
+    console.log ('input is not a string');
+    return undefined;
+  }
+
+  let cappdArray =[];
+  let words = sentence.split(' ');
+  words.forEach(
+    function(element) {
+      cappdArray.push(capitalizeTheFirstWord(element));
+    }
+  );
+
+  return cappdArray.join(' ');
+
+}
+
+function capitalizeTheFirstWord(word){
+   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }
 
 // Add 6 total (5 more)
@@ -19,6 +38,26 @@ expect(
   makeIntoTitle('the longest road is a great song'),
   'The Longest Road Is A Great Song'
 );
+expect(
+  makeIntoTitle('99 stuf1'),
+  '99 Stuf1'
+);
+expect(
+  makeIntoTitle(1000),
+  undefined
+);
+expect(
+  makeIntoTitle('😄 yo yo'),
+  '😄 Yo Yo'
+);
+expect(
+  makeIntoTitle('ALL YOUR BASE ARE BELONG'),
+  'All Your Base Are Belong'
+);
+
+
+
+
 
 /**
  * -------------------------------------------------------------------
