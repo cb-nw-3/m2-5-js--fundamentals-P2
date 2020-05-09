@@ -12,10 +12,27 @@
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+  if (typeof str !== "string") return undefined;
+  if (str === "") return str;
+
+  let strArray = str.split(" ");
+
+  let longestWord = "";
+  for (let i = 0; i < strArray.length; i++) {
+    if (strArray[i].length >= longestWord.length) {
+      longestWord = strArray[i];
+    }
+  }
+
+  return longestWord;
 }
 
 // We need 5 test cases
+expect(longestWord("The quick brown fox jumps over the lazy dog"), "jumps");
+expect(longestWord("aa aaa aaaa"), "aaaa");
+expect(longestWord("bbbbb bb b"), "bbbbb");
+expect(longestWord("cccc cccc cccc aaaa bbbb"), "bbbb");
+expect(longestWord("cccc cccc cccc aaaa bbbb zzzz"), "zzzz");
 
 /**
  * -------------------------------------------------------------------
@@ -24,10 +41,8 @@ function longestWord(str) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

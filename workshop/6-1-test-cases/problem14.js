@@ -8,23 +8,34 @@
 // - To represent a newline character, you can use "\n".
 
 function wrapAfter40Chars(str) {
-  // Your code here!
+  let arrayed = str.split("");
+  // let insertNewLine = false;
+  for (let i = 0; i < arrayed.length; i++) {
+    // if (insertNewLine) {
+    //   insertNewLine = false;
+    //   arrayed.splice(i, 0, "\n");
+    // }
+    if (i % 40 === 0 && i !== 0) {
+      // insertNewLine = true;
+      arrayed.splice(i, 0, "\n");
+    }
+  }
+  console.log(arrayed.join(""));
+  return arrayed.join("");
 }
 
 // Test case 1: No space after newline
 expect(
   wrapAfter40Chars(
-    'This is a very long string! It seems to go on forever. Sadly, it does not.'
+    "This is a very long string! It seems to go on forever. Sadly, it does not."
   ),
-  'This is a very long string! It seems to \ngo on forever. Sadly, it does not.'
+  "This is a very long string! It seems to \ngo on forever. Sadly, it does not."
 );
 
 // Test case 2: Space after newline
 expect(
-  wrapAfter40Chars(
-    'My favourite thing about cats is all the things.'
-  ),
-  'My favourite thing about cats is all the\nthings.'
+  wrapAfter40Chars("My favourite thing about cats is all the things."),
+  "My favourite thing about cats is all the\nthings."
 );
 
 // Add 4 more test cases
@@ -36,10 +47,8 @@ expect(
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

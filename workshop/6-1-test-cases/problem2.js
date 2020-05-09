@@ -8,14 +8,19 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  /* Your code here */
+  if (!str || str === "" || !isNaN(str)) return undefined;
+  return str[str.length - 1];
 }
 
 // Step 2
 // You're given 1 test case. Add 4 more, making sure to cover all of the
 // conditions specified above (don't forget empty string and number!!)
 
-expect(lastCharacter('max'), 'x');
+expect(lastCharacter("max"), "x");
+expect(lastCharacter(""), undefined);
+expect(lastCharacter(3), undefined);
+expect(lastCharacter(), undefined);
+expect(lastCharacter("sadasfasfsafas"), "s");
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠
@@ -34,7 +39,7 @@ expect(lastCharacter('max'), 'x');
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }

@@ -11,11 +11,29 @@
 // f(["foo", -1]) // ""
 
 function repeat(arr) {
-  // Your code here
+  if (typeof arr !== "object" || arr.length !== 2) return undefined;
+  if (typeof arr[0] !== "string" || typeof arr[1] !== "number")
+    return undefined;
+  if (arr[1] <= 0) return "";
+
+  let repeatedstring = "";
+  for (let i = 0; i < arr[1]; i++) {
+    repeatedstring += arr[0];
+  }
+
+  return repeatedstring;
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+expect(repeat(["hello", 5]), "hellohellohellohellohello");
+expect(repeat("Array"), undefined);
+expect(repeat([true, 1]), undefined);
+expect(repeat(["hello", "3"]), undefined);
+expect(repeat(["hello"]), undefined);
+expect(repeat(["hello", 3, 4]), undefined);
+expect(repeat(["world", 2]), "worldworld");
+expect(repeat(["world", 0]), "");
 
 /**
  * -------------------------------------------------------------------
@@ -24,10 +42,8 @@ function repeat(arr) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }
