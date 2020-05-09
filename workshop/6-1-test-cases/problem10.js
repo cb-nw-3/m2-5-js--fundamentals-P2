@@ -10,14 +10,51 @@
 //  - Iterate over each word, calling your "capitalize word" function
 //  - Join the results into a string
 
+function capIt(item) {
+  let newWord = item.toLowerCase();
+  let wordArray = newWord.split('');
+  wordArray[0] = wordArray[0].toUpperCase();
+  return wordArray.join('');
+}
+
 function makeIntoTitle(sentence) {
-  // Your code here
+  if (sentence === "" || typeof sentence !== "string") {
+    return;
+  }
+  let sentArray = sentence.split(' ');
+  let newSentence = [];
+  sentArray.forEach(function (item) {
+    newSentence.push(capIt(item));
+  })
+  newSentence = newSentence.join(" ");
+  return newSentence;
 }
 
 // Add 6 total (5 more)
 expect(
   makeIntoTitle('the longest road is a great song'),
   'The Longest Road Is A Great Song'
+);
+
+expect(
+  makeIntoTitle('0118 999 881 99 9119 7253'),
+  '0118 999 881 99 9119 7253'
+);
+expect(
+  makeIntoTitle(),
+  undefined
+);
+expect(
+  makeIntoTitle('99 luftballons is a song by Nena'),
+  '99 Luftballons Is A Song By Nena'
+);
+expect(
+  makeIntoTitle(['the longest road is a great song']),
+  undefined
+);
+expect(
+  makeIntoTitle('MAKE THIS WORD BIG'),
+  'Make This Word Big'
 );
 
 /**

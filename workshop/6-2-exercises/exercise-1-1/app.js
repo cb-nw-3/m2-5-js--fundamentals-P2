@@ -14,3 +14,23 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
+
+document.querySelectorAll("button").forEach(function (item) {
+    item.addEventListener("click", function () {
+        switch (this.id) {
+            case "btn-1":
+                this.style.visibility = 'hidden';
+                break;
+            case "btn-2":
+                this.style.background = 'crimson'
+                break;
+            case "btn-3":
+                this.style.background = 'lightblue'
+                break;
+            case "btn-4":
+                this.classList.add("jitters");
+                break;
+        };
+    })
+});
+

@@ -7,10 +7,38 @@
 // JAVASCRIPT -> No
 
 function checkIsPalindrome(inputString) {
-  // Your code here
+
+  if (typeof inputString !== "string") {
+    return "no";
+  }
+
+  // checking palindromes is kind of weird.
+  // take the length of the string.
+  // grab string [0] and string [n]; compare for sameness
+  // iterate until floor(n/2), I guess
+  // as long as the bit is true, it's a palindrome?
+
+  let wordArr = inputString.split('');
+  for (let i = 0; i < wordArr.length / 2; i++) {
+    if (wordArr[i] !== wordArr[wordArr.length - i - 1]) {
+      return "no";
+    }
+  }
+  return "yes";
+
 }
 
 // Add 6 test cases
+
+expect(checkIsPalindrome("radar"), "yes");
+expect(checkIsPalindrome("javascript"), "no");
+expect(checkIsPalindrome("12321"), "yes");
+
+// per Josh, we should treat strings of numbers as strings of chars, not as numbers.
+
+expect(checkIsPalindrome("-12321"), "no");
+expect(checkIsPalindrome(["a", "b", "b", "a"]), "no");
+expect(checkIsPalindrome(""), "yes");
 
 /**
  * -------------------------------------------------------------------

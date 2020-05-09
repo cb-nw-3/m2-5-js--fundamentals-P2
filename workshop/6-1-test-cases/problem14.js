@@ -8,7 +8,19 @@
 // - To represent a newline character, you can use "\n".
 
 function wrapAfter40Chars(str) {
-  // Your code here!
+  if (typeof str !== "string") {
+    return;
+  }
+  let charArray = str.split('');
+  let arrayCount = Math.floor(charArray.length / 40);
+  for (let i = 1; i <= arrayCount; i++) {
+    if (charArray[40 * i] === " ") {
+      charArray.splice(40 * i, 1, "\n");
+    } else {
+      charArray.splice(40 * i, 0, "\n");
+    }
+  }
+  return charArray.join('');
 }
 
 // Test case 1: No space after newline
@@ -28,6 +40,36 @@ expect(
 );
 
 // Add 4 more test cases
+
+// too short
+
+expect(
+  wrapAfter40Chars(
+    'This is a short string.'
+  ),
+  'This is a short string.'
+);
+
+// non-string value
+
+expect(
+  wrapAfter40Chars(
+    []
+  ),
+  undefined
+);
+expect(
+  wrapAfter40Chars(
+    ""
+  ),
+  ""
+);
+expect(
+  wrapAfter40Chars(
+    "Merging is how Git combines code from multiple sources. It will allow us to incorporate the changes from the master branch without losing any of our work."
+  ),
+  "Merging is how Git combines code from mu\nltiple sources. It will allow us to inco\nrporate the changes from the master bran\nch without losing any of our work."
+);
 
 /**
  * -------------------------------------------------------------------
