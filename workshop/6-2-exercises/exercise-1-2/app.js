@@ -20,3 +20,41 @@
 // Because we are now going to work with the opacity and background of the buttons,
 // they need to be set here. So that they are referencable via the the style attribute.
 // initialize the background color for all of the buttons in here. (for loop)
+
+const btnList = document.querySelector('#btn-list');
+
+for(let i = 1; i < 5; i++) {
+    let x = document.getElementById(`btn-${i}`);
+    x.style.background = 'gold';
+    x.style.opacity = '100';
+}
+
+const toggleColor = (i, color) => {
+    const btnElem = document.getElementById(i);
+    const currentColor = btnElem.style.background;
+    btnElem.style.background = currentColor === 'gold' ? color : 'gold';
+}
+
+function click(x) {
+    const btnId = x.target.id;
+    const btnElem = document.getElementById(btnId);
+    switch (btnId) {
+        case 'btn-1':
+            btnElem.style.opacity = btnElem.style.opacity === '100' ? '0' : '100';
+            break;
+        case 'btn-2':
+            toggleColor(btnId, 'crimson');
+            break;
+        case 'btn-3':
+            toggleColor(btnId, 'lightblue');
+            break;
+        case 'btn-4':
+            btnElem.classList.toggle('jitters');
+            break;
+        default:
+            break;
+    }
+}
+
+btnList.addEventListener('click', click);
+
