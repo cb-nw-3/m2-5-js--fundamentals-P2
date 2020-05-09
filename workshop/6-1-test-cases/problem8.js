@@ -14,10 +14,31 @@
 //  - Convert the filled array into a string (use the join method) and return it
 
 function reverse(str) {
-  // Your code here
+  if (str === "") {
+    return;
+  } else if (typeof str !== "string") {
+    return;
+  }
+
+  // this still feels inelegant. There's got to be a more compact solution.
+  // On the other hand, it fits the brief. So.
+  
+  let newStringArr = str.split('');
+  let reversedString = [];
+  newStringArr.forEach(function (item) {
+    reversedString.unshift(item);
+  })
+  return reversedString.join('');
 }
 
 // We need 5 test cases
+
+expect(reverse("flip"), "pilf");
+expect(reverse("string test"), "tset gnirts");
+expect(reverse(), undefined);
+expect(reverse(321), undefined);
+expect(reverse(["foo"]), undefined);
+
 
 /**
  * -------------------------------------------------------------------
