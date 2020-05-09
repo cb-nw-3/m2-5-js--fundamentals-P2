@@ -1,5 +1,3 @@
-// let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 7
 // ---------
 // Step 1
@@ -8,9 +6,9 @@
 // - Make this function return the string repeated as many times as specified by the second element of the array.
 // - If a negative number or zero is specified, return an empty string. If any invalid parameters are supplied return undefined.
 
-// f("foo", 3) // "foofoofoo"
-// f("fo", 3) // "fofofo"
-// f("foo", -1) // ""
+// f(["foo", 3]) // "foofoofoo"
+// f(["fo", 3]) // "fofofo"
+// f(["foo", -1]) // ""
 
 function repeat(arr) {
   let string = arr[0]
@@ -53,6 +51,8 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
+    console.log(
+      `⛔️ Expected “${result}” to equal “${value}”`
+    );
   }
 }

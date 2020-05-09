@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 14
 // ----------
 // Make this function return the input string wrapped to 40 characters per line.

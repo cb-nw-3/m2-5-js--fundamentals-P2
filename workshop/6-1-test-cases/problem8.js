@@ -1,5 +1,3 @@
-// let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 8
 // ---------
 // Write a function that returns the input string, reversed.
@@ -43,6 +41,8 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
+    console.log(
+      `⛔️ Expected “${result}” to equal “${value}”`
+    );
   }
 }

@@ -1,5 +1,3 @@
-// let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 10
 // ----------
 // Make this function return the input string, capitalized.
@@ -70,6 +68,8 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
+    console.log(
+      `⛔️ Expected “${result}” to equal “${value}”`
+    );
   }
 }

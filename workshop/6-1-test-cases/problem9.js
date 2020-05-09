@@ -1,5 +1,3 @@
-// let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 9
 // ---------
 // Make this function return the longest word in the input string. If the input
@@ -47,6 +45,8 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
+    console.log(
+      `⛔️ Expected “${result}” to equal “${value}”`
+    );
   }
 }

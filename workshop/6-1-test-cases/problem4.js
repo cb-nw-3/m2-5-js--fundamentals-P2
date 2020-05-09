@@ -6,9 +6,9 @@
 // string. If no such letter exists, it should return undefined.
 //
 // For example:
-// getLetterAtIndex("hello", 1); // e
-// getLetterAtIndex("", 4);      // undefined
-// getLetterAtIndex("abc", 0);   // a
+// getLetterAtIndex(["hello", 1]); // e
+// getLetterAtIndex(["", 4]);      // undefined
+// getLetterAtIndex(["abc", 0]);   // a
 
 function getLetterAtIndex(string, num) {
   if(num > string.length-1 || string === "" || num < 0 || typeof num !== 'number'){
@@ -34,6 +34,8 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
+    console.log(
+      `⛔️ Expected “${result}” to equal “${value}”`
+    );
   }
 }

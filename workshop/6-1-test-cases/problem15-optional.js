@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 12
 // ----------
 // Make this function return the number of elements that are unique to array1
@@ -41,6 +39,8 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
+    console.log(
+      `⛔️ Expected “${result}” to equal “${value}”`
+    );
   }
 }

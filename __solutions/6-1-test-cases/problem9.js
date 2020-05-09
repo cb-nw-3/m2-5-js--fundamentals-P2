@@ -1,5 +1,3 @@
-let verifyEquals = require('../../assets/verify-equals');
-
 // Problem 9
 // ---------
 // Make this function return the longest word in the input string. If the input string is empty then return an empty string.
@@ -17,7 +15,8 @@ function f(str) {
   let longest = '';
 
   for (let i = 0; i < words.length; i++) {
-    if (longest.length <= words[i].length) longest = words[i];
+    if (longest.length <= words[i].length)
+      longest = words[i];
   }
   return longest;
 }
@@ -26,5 +25,9 @@ function f(str) {
 function g(str) {
   return str
     .split(' ')
-    .reduce((acc, curr) => (acc.length < curr.length ? curr : acc), '');
+    .reduce(
+      (acc, curr) =>
+        acc.length < curr.length ? curr : acc,
+      ''
+    );
 }
