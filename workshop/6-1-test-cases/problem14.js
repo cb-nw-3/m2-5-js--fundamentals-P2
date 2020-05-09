@@ -11,7 +11,7 @@ function wrapAfter40Chars(str) {
   let arr = str.split("");
   let result = "";
   for (let i = 0; i < arr.length; i++) {
-    if (i % 40 === 0) {
+    if (i % 40 === 0 && i > 0) {
       result += "\n";
       if (arr[i] !== " ") {
         result += arr[i];
@@ -39,9 +39,9 @@ expect(
 
 expect(
   wrapAfter40Chars(
-    "You were the reason they stuck around, you're old enough now."
+    "Merging is how Git combines code from multiple sources. It will allow us to incorporate the changes from the master branch without losing any of our work."
   ),
-  "You were the reason they stuck around bu\nt you're old enough now."
+  "Merging is how Git combines code from mu\nltiple sources. It will allow us to inco\nrporate the changes from the master bran\nch without losing any of our work."
 );
 
 expect(
