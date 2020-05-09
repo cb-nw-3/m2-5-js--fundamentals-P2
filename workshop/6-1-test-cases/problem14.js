@@ -13,6 +13,9 @@ function wrapAfter40Chars(str) {
     strArray = str.split("");
     for (let i = 40; i < strArray.length; i += 41) {
       strArray.splice(i, 0, "\n");
+      if (strArray[i + 1] === " ") {
+        strArray.splice(i + 1, 1);
+      }
     }
     return strArray.join("");
   }
@@ -30,7 +33,7 @@ expect(
 // Test case 2: Space after newline
 expect(
   wrapAfter40Chars("My favourite thing about cats is all the things."),
-  "My favourite thing about cats is all the\n things."
+  "My favourite thing about cats is all the\nthings."
 );
 
 // Add 4 more test cases
@@ -45,7 +48,7 @@ expect(
   wrapAfter40Chars(
     "The first step to any conference talk is figuring out what you want to talk about! In my case, I was really passionate about explorable explanations.  An explorable explanation, sometimes just called an explorable, is a project that mixes elements of data visualization, journalism, education, and video games to create interactive learning experiences."
   ),
-  "The first step to any conference talk is\n figuring out what you want to talk abou\nt! In my case, I was really passionate a\nbout explorable explanations.  An explor\nable explanation, sometimes just called \nan explorable, is a project that mixes e\nlements of data visualization, journalis\nm, education, and video games to create \ninteractive learning experiences."
+  "The first step to any conference talk is\nfiguring out what you want to talk about\n! In my case, I was really passionate ab\nout explorable explanations.  An explora\nble explanation, sometimes just called a\nn explorable, is a project that mixes el\nements of data visualization, journalism\n, education, and video games to create i\nnteractive learning experiences."
 );
 
 expect(wrapAfter40Chars("My favourite thing"), "My favourite thing");
