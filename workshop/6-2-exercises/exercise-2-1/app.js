@@ -11,3 +11,25 @@
 // - the cells should all be square.
 // - cells should have a class of 'cell'
 // - cells should have and id of 'cell-#'
+
+const boardSize = 600;
+const rows = 8;
+const columns = 8;
+
+const boardElement = document.querySelector("#board");
+
+boardElement.setAttribute(
+  "style",
+  `width: ${boardSize}px; 
+  height: ${boardSize}px;
+  grid-template-columns: repeat(${columns}, 1fr);
+  grid-template-rows: repeat(${rows}, 1fr);`
+);
+
+for (let i = 0; i < rows * columns; i++) {
+  let newCell = document.createElement("div");
+  newCell.classList.add("cell");
+  newCell.setAttribute("id", `cell-${i}`);
+
+  boardElement.appendChild(newCell);
+}
