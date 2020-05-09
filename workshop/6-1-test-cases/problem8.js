@@ -15,9 +15,22 @@
 
 function reverse(str) {
   // Your code here
+  if (typeof str === "string") {
+    let reversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+      reversed += str[i];
+    }
+    return reversed;
+  }
+  return undefined;
 }
 
 // We need 5 test cases
+expect(reverse("hello"), "olleh");
+expect(reverse("Mr. Mxyzptlk's"), "s'kltpzyxM .rM");
+expect(reverse(12), undefined);
+expect(reverse("how are you"), "uoy era woh");
+expect(reverse(["helLo", "Batman"]), undefined);
 
 /**
  * -------------------------------------------------------------------
@@ -26,10 +39,8 @@ function reverse(str) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

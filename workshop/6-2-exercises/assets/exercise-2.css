@@ -1,53 +1,78 @@
-@import 'css-reset.css';
+@import "css-reset.css";
+
+:root {
+  --fontColor: rgb(223, 188, 52);
+}
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .board {
-    background: #eaeaea;
-    display: grid;
-    grid-gap: 2px;
-    border: 2px solid #808080;
-    margin: 32px 0;
+  background: #eaeaea;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-gap: 2px;
+  border: 2px solid #808080;
+  margin: 32px 0;
 }
 
 .cell {
-    background: #fff;
-    cursor: pointer;
+  background: #fff;
+  cursor: pointer;
+  border: 1px solid gray;
 }
 
 .cell:hover {
-    background-color: #808080;
-    transition: background-color linear 300ms;
+  background-color: #808080;
+  transition: background-color linear 300ms;
 }
 
 .form {
-    display: flex;
-    justify-content: space-around;
-    margin: 32px 0 0;
-    width: 200px;
+  display: flex;
+  justify-content: space-around;
+  margin: 32px 0 0;
+  width: 400px;
 }
 
 .form-item {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-item label {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    margin-bottom: 3px;
-    text-align: center;
-    font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-bottom: 3px;
+  text-align: center;
+  font-weight: 700;
 }
 
 .form-item input {
-    box-sizing: border-box;
-    height: 32px;
-    width: 64px;
-    padding: 8px;
+  box-sizing: border-box;
+  height: 32px;
+  width: 64px;
+  padding: 8px;
+}
+.startButton {
+  margin-top: 1%;
+  font-size: 2vmin;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  appearance: none;
+  background: var(--fontColor);
+  border: none;
+  color: var(--backgroundColor);
+  border-radius: 2em;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+  z-index: 1;
+  box-shadow: 0 0 1em rgba(white, 0.2);
+  outline: none;
+  width: 180px;
 }

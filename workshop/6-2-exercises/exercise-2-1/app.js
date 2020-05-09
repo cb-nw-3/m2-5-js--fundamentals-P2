@@ -11,3 +11,17 @@
 // - the cells should all be square.
 // - cells should have a class of 'cell'
 // - cells should have and id of 'cell-#'
+
+const BOARD = document.querySelector("#board");
+console.log(BOARD);
+BOARD.style.width = "600px";
+BOARD.style.height = "600px";
+
+for (let i = 1; i <= 64; i++) {
+  const CELL = document.createElement("div");
+  CELL.id = `cell-${i}`;
+  CELL.classList.add("cell");
+  CELL.style.width = "72px";
+  CELL.style.height = "72px";
+  BOARD.appendChild(CELL);
+}
