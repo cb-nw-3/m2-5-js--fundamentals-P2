@@ -14,3 +14,27 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
+
+let buttonListener = document.querySelector("#btn-list");
+buttonListener.addEventListener("click", eventHandler);
+
+function eventHandler(event) {
+  switch (event.target.id) {
+    case "btn-1": {
+      event.currentTarget.querySelector("#btn-1").style.opacity = "0";
+      break;
+    }
+    case "btn-2": {
+      event.currentTarget.querySelector("#btn-2").style.background = "crimson";
+      break;
+    }
+    case "btn-3": {
+      event.currentTarget.querySelector("#btn-3").style.background = "blue";
+      break;
+    }
+    case "btn-4": {
+      event.currentTarget.querySelector("#btn-4").classList.add("jitters");
+      break;
+    }
+  }
+}
