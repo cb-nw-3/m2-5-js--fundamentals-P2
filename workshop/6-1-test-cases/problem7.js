@@ -6,9 +6,9 @@
 // - Make this function return the string repeated as many times as specified by the second element of the array.
 // - If a negative number or zero is specified, return an empty string. If any invalid parameters are supplied return undefined.
 
-// f("foo", 3) // "foofoofoo"
-// f("fo", 3) // "fofofo"
-// f("foo", -1) // ""
+// f(["foo", 3]) // "foofoofoo"
+// f(["fo", 3]) // "fofofo"
+// f(["foo", -1]) // ""
 
 function repeat(arr) {
   // check if argument is an array of a string and a number
