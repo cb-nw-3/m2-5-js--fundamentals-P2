@@ -14,3 +14,22 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach(function (item) {
+  item.addEventListener("click", function (event) {
+    switch (event.target.id) {
+      case "btn-1":
+        event.target.style.opacity = 0;
+        break;
+      case "btn-2":
+        event.target.style.backgroundColor = "crimson";
+        break;
+      case "btn-3":
+        event.target.style.backgroundColor = "lightblue";
+        break;
+      case "btn-4":
+        event.target.classList.add("jitters");
+    }
+  });
+});

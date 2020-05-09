@@ -11,12 +11,14 @@ function addNumbers(...nums) {
   if (nums.length > 0) {
     let total = 0;
 
-    for (i = 0; i < nums.length; ) {
+    for (i = 0; i < nums.length; i++) {
       if (isNaN(nums[i])) {
+        if (i + 1 === nums.length) {
+          return undefined;
+        }
         i++;
       }
       total += nums[i] * nums[i];
-      i++;
     }
     return total;
   }
