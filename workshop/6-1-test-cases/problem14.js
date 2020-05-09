@@ -1,4 +1,4 @@
-let verifyEquals = require('../../assets/verify-equals');
+// let verifyEquals = require('../../assets/verify-equals');
 
 // Problem 14
 // ----------
@@ -10,7 +10,23 @@ let verifyEquals = require('../../assets/verify-equals');
 // - To represent a newline character, you can use "\n".
 
 function wrapAfter40Chars(str) {
-  // Your code here!
+  if(str.length < 40){
+    return undefined
+  }
+  let position = 40;
+  let lineBreak = '\n';
+  let nextPosition = str.charAt(40)
+  let finalString =''
+  
+  if(nextPosition === ' '){
+    finalString = str.slice(0, position) + lineBreak + str.slice(41)
+    console.log('inside' ,finalString)
+    return finalString
+  }
+  finalString = str.slice(0, position) + lineBreak + str.slice(position)
+  console.log('outside', finalString)
+  return finalString
+
 }
 
 // Test case 1: No space after newline

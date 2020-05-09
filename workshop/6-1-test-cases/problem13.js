@@ -1,4 +1,4 @@
-let verifyEquals = require('../../assets/verify-equals');
+// let verifyEquals = require('../../assets/verify-equals');
 
 // Problem 13
 // ----------
@@ -9,9 +9,22 @@ let verifyEquals = require('../../assets/verify-equals');
 // JAVASCRIPT -> No
 
 function checkIsPalindrome(inputString) {
-  // Your code here
+  if(typeof inputString !== 'string'){
+    return undefined
+  }
+  let reverseWord = inputString.split('').reverse().join('')
+  if (inputString === reverseWord){
+    return true
+  }return false
 }
 
+expect(checkIsPalindrome('kayak'), true)
+expect(checkIsPalindrome('boat'), false)
+expect(checkIsPalindrome('kayak laval'), false)
+expect(checkIsPalindrome(232), undefined)
+expect(checkIsPalindrome('343'), true)
+expect(checkIsPalindrome('taco cat'), false)
+expect(checkIsPalindrome('tacocat'), true)
 // Add 6 test cases
 
 /**

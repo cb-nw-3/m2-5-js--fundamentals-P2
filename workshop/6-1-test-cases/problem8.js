@@ -1,4 +1,4 @@
-let verifyEquals = require('../../assets/verify-equals');
+// let verifyEquals = require('../../assets/verify-equals');
 
 // Problem 8
 // ---------
@@ -16,10 +16,23 @@ let verifyEquals = require('../../assets/verify-equals');
 //  - Convert the filled array into a string (use the join method) and return it
 
 function reverse(str) {
-  // Your code here
+  if(typeof str !== 'string' || str === ''){
+    return undefined
+  }
+  let split = str.split('');
+  let reverse = [];
+  for(i = split.length-1; i >= 0; i-- ){
+    reverse.push(split[i]);
+  }
+  let finalString = reverse.join('');
+  return finalString
 }
 
-// We need 5 test cases
+expect(reverse('dog'), 'god')
+expect(reverse(123), undefined)
+expect(reverse('i love u'), 'u evol i')
+expect(reverse(''), undefined)
+// We need 4 test cases
 
 /**
  * -------------------------------------------------------------------

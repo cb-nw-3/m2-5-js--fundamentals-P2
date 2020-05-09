@@ -8,7 +8,14 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  /* Your code here */
+
+  if(str.charAt(str.length-1) === ''){
+  return undefined;
+  }
+  if(str.charAt(str.length-1)<= 9){
+  return undefined;
+  }
+  return str.charAt(str.length-1)
 }
 
 // Step 2
@@ -16,9 +23,12 @@ function lastCharacter(str) {
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
-
+expect(lastCharacter('slime'), 'e')
+expect(lastCharacter('dog79'), undefined)
+expect(lastCharacter(''),undefined)
+expect(lastCharacter('a'),'a')
 // Add 4 more test cases here!
-// 🌠 NOTE 🌠
+// 🌠 NOTE 
 // Be creative with your tests!
 // There's an old joke about QA (Quality Assurance) testers:
 //

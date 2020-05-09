@@ -1,4 +1,4 @@
-let verifyEquals = require('./verify-equals.js');
+// let verifyEquals = require('./verify-equals.js');
 
 // Problem 11
 // ----------
@@ -8,12 +8,28 @@ let verifyEquals = require('./verify-equals.js');
 // - If no arguments are passed, return `undefined`
 
 function addNumbers(...nums) {
-  // Insert missing solution please
+  let total = 0;
+  if (nums.length === 0){
+    return undefined
+  }
+  nums.forEach(function (item){
+    if(typeof item === 'number'){
+      return total = total + item ** 2
+    }
+    
+  })
+  return total
 }
 
 // Add 7 more test cases.
-expect(addNumbers(1, 2, 3), 14); // 1 + 2**2 + 3**2 = 1 + 4 + 9 = 14
-
+expect(addNumbers(1, 2, 3), 14)
+expect(addNumbers(1, 2,"dog", 3), 14)
+expect(addNumbers(), undefined)
+expect(addNumbers('dog'), 0)
+expect(addNumbers(2,2), 8)
+expect(addNumbers('cat', 'cat', 'cat'), 0)
+expect(addNumbers('cat', 3), 9)
+expect(addNumbers(-2), 4)
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

@@ -1,4 +1,4 @@
-let verifyEquals = require('../../assets/verify-equals');
+// let verifyEquals = require('../../assets/verify-equals');
 
 // Problem 4
 // ---------
@@ -10,14 +10,21 @@ let verifyEquals = require('../../assets/verify-equals');
 // getLetterAtIndex("", 4);      // undefined
 // getLetterAtIndex("abc", 0);   // a
 
-function getLetterAtIndex(arr) {
-  // Your code here
+function getLetterAtIndex(string, num) {
+  if(num > string.length-1 || string === "" || num < 0 || typeof num !== 'number'){
+    return undefined
+  }
+  return string.charAt(num)
 }
 
 // Add 6 more test cases
-expect(getLetterAtIndex('hello', 4), 'o');
+expect(getLetterAtIndex('hello', 4), 'o'); 
 expect(getLetterAtIndex('goodbye', 0), 'g');
-
+expect(getLetterAtIndex('Love', 3), 'e')
+expect(getLetterAtIndex('do',4),undefined)
+expect(getLetterAtIndex('', 0), undefined)
+expect(getLetterAtIndex('duck', -3), undefined)
+expect(getLetterAtIndex('slide', 'dog'), undefined)
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

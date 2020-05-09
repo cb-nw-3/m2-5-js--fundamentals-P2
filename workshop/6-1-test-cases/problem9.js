@@ -1,4 +1,4 @@
-let verifyEquals = require('../../assets/verify-equals');
+// let verifyEquals = require('../../assets/verify-equals');
 
 // Problem 9
 // ---------
@@ -14,8 +14,27 @@ let verifyEquals = require('../../assets/verify-equals');
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+  if(typeof str !== 'string'){
+    return undefined
+  }
+  if(str === ''){
+    return ''
+  }
+  
+  let newArray = str.split(' ');
+  let longerWord = '';
+  for(i = 0; i <= newArray.length-1; i++){
+    if(newArray[i].length >= longerWord.length){
+      longerWord = newArray[i]
+    }
+  }return longerWord
 }
+
+expect(longestWord('dogs are fucking beautiful'), 'beautiful')
+expect(longestWord(245), undefined)
+expect(longestWord(''), '')
+expect(longestWord('love dove cove'), 'cove')
+expect(longestWord('love'),'love')
 
 // We need 5 test cases
 

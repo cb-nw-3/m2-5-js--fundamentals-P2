@@ -1,0 +1,227 @@
+DEBUGGING:
+
+always read error messages
+
+TESTING: 
+
+
+
+HOISTING:
+
+    hell();
+
+    function hell(){
+        console.log('hi!')
+    }
+
+    Functions are hoisted to the top
+    It does not do that for variables
+
+Anonymous functions:
+    myGreeting();
+    
+    let myGreeting = function (){
+        console.log(hi)
+    }
+    this won't work because myGreeting() is pointing to something that has not happenned yet. 
+
+
+FUNCTIONS PART 2:
+    A parameter is a variable in a function, method or definition
+
+    function addFive (num){
+        return num+5
+    }
+    num is a parameter
+
+    let myNum =10
+    addFive(myNum)
+
+    myNum is an argument 
+    One paramenter (num) can be given several arguments
+
+    
+    EXTRA ARGUMENTS VS MISSING ARGUMENTS:
+        function sum(num1, num2){
+            return num1+num2;
+        }
+
+        sum(13)  THis is missing an argument to be able to work
+
+    ARROW FUCNTIONS :
+
+    let add 5 = (number) => {
+        return number+5;
+    }
+
+
+REST/SPREAD:
+    REST:
+
+    the ... says to take the arguments and make them into an array (the word params can be any word)
+    function addAll(param1, param2,...params){
+        console.log(param1) //would give the value of param 1
+        console.log(param2) //would give value of param 2
+        console.log(params) //will give an array of the other parameters
+    }
+
+    SPREAD:
+    const arr = [1,2,3,4,5]
+
+    function addAll(param1, param2,...arr){
+        console.log(param1) //would give the value of the first value in the array so 1
+        console.log(param2) //would give us two
+        console.log(params) //will give us the rest of the arr array
+    }
+
+    SWITCH CASES:
+    Are syntactic sugar. Same way to accomplish a task with different syntax
+
+    switch(){
+        case 5:
+            console.log(slkfjsldk)
+            break; //you need to put break
+        default: 
+            console.log(skdfjlskdfjs)
+            break;
+    }
+
+
+Exercise: 
+
+    function getFavouriteFoodEmoji(food) {
+  if (food === 'hamburger') {
+    return ':hamburger:';
+  } else if (food === 'sushi') {
+    return ':sushi:';
+  } else if (food === 'lobster') {
+    return '🦞'
+  } else if (food === 'pizza') {
+    return ':pizza:';
+  }
+}
+
+switch (food){
+    case 'hamburger':
+        return ':hamburger';
+    case 'sushi :
+        return ':sushi'
+    case 'lobster'
+        return ':lobster'
+    case 'pizza'
+        return ':pizza'
+}
+
+
+
+function calculator(num1, num2, operation) {
+  if (operation === 'add') {
+    return num1 + num2;
+  } else if (operation === 'subtract') {
+    return num1 - num2;
+  } else if (operation === 'multiply') {
+    return num1 * num2;
+  } else if (operation === 'divide') {
+    return num1 / num2;
+  } else {
+    console.error('Unrecognized operation: ', operation);
+    return null;
+  }
+function calculator (num1, num2, operation){
+    switch (operation){
+        case 'add':
+            return num 1 + num2;
+        case 'sub':
+            return num1 - num2;
+        default: 
+            console.error('Unrecognized operation : ', operation)
+            return null;
+    }
+}
+
+function greetUser(hourOfDay) {
+  if (hourOfDay <= 11) {
+    return 'Good morning';
+  } else if (hourOfDay < 18) {
+    return 'Good afternoon';
+  } else {
+    return 'Good evening'
+  }
+}
+
+IN THIS CASE DON'T USE A SWITCH !
+
+SHADOWING: 
+    A scope is forme by:
+        functions
+        if/else
+
+
+let isHungry = true;
+let fruit = 'watermelon';
+if (isHungry) {
+  // Switch to a more filling melon
+  let fruit = 'cantaloupe'
+}
+// What is the value of `fruit`?
+console.log(fruit);
+
+fruit = watermelon
+
+
+
+let roomTemperature = 21;
+function turnOnHeater() {
+  roomTemperature = 24;
+}
+// What is the value of `roomTemperature`?
+console.log(roomTemperature);
+
+roomTemparture = 21
+
+
+
+let mood = ':sleepy:';
+function watchTelevision() {
+  let show = 'Tiger King';
+  mood = [':flushed:', ':nauseated_face:', '🥴'];
+}
+if (mood === ':sleepy:') {
+  watchTelevision();
+}
+// What is the value of `mood`?
+console.log(mood);
+
+mood = array
+
+
+let recipe = [
+  'crack eggs into bowl',
+  'beat eggs until velvety',
+  'add salt & pepper to taste',
+  'combine with flour',
+  'bake until dough has leavened',
+];
+bake();
+function bake(recipe) {
+  // What is the value of `recipe`?
+  console.log(recipe)
+}
+
+recipe = undefined
+
+Variable shadowing means that with scope, you can create a new variable with the same name
+So let fruit ='bababa'
+ if (isHungry){
+     let fruit = 'apple'
+ }
+THe outside fruit isn't changed cause the inside fruit is a shadow of the outside. IT's same name but different variable
+
+
+VARIABLE RULES: 
+variables can be reasigned in child scopes
+variables can be shadowed in child scopes
+
+MERGE CONFLICS
+
+

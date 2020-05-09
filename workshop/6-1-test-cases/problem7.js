@@ -1,4 +1,4 @@
-let verifyEquals = require('../../assets/verify-equals');
+// let verifyEquals = require('../../assets/verify-equals');
 
 // Problem 7
 // ---------
@@ -13,9 +13,34 @@ let verifyEquals = require('../../assets/verify-equals');
 // f("foo", -1) // ""
 
 function repeat(arr) {
-  // Your code here
+  let string = arr[0]
+  let repeatNum = arr[1]
+  if(arr[1] < 0 || typeof arr[1] !== 'number'){
+    return undefined
+  }
+  if(arr[0] === ''){
+    return undefined
+  }
+  if(arr.length !== 2){
+    return undefined
+  }
+  if(typeof arr[0] !== 'string'){
+    return undefined
+  }
+  let total = ''
+  for(i = 0; i < repeatNum; i++){
+    total = total + string
+  }
+  return total
 }
 
+expect(repeat(['do', 4]), 'dodododo')
+expect(repeat(['fada', 2]), 'fadafada')
+expect(repeat([3,4]), undefined)
+expect(repeat (['dog', -3]),undefined)
+expect(repeat ('dog', 3, 4), undefined)
+expect(repeat(['',5]), undefined)
+expect(repeat(['slo','flow']), undefined)
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
 

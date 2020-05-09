@@ -22,23 +22,23 @@ function reverseString(str) {
 // Q1
 square(decrement(square(decrement(3))));
 
+// returns 9
 
 
 
 // Q2
 decrement(decrement(square(square(3))));
 
-
-
+// returns 79
 
 // Q3
 duplicateString(reverseString("hello"));
 
-
+// returns 'olleholleh'
 
 
 // Q4
 reverseString(duplicateString(duplicateString("foo")));
 
-
+// returns "oofoofoofoof"
 
