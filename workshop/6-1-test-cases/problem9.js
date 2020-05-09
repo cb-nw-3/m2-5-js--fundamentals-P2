@@ -12,10 +12,26 @@
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+  if(typeof(str)=='string') {
+    let words = str.split(" ");
+    console.log(words);
+    let longest = '';
+    words.forEach(word => {
+      if(longest.length <= word.length) {
+        longest = word;
+      }
+    })
+    console.log(`longest word is: ${longest}`);
+    return longest;
+  }
 }
 
 // We need 5 test cases
+expect(longestWord("Hello good morning"),'morning');
+expect(longestWord(["Hello morning","aousdbnaoiusbdoaubsd"]),undefined);
+expect(longestWord(555),undefined);
+expect(longestWord("Hellogoodmorning"),'Hellogoodmorning');
+expect(longestWord("hello","good","morning"),'hello');
 
 /**
  * -------------------------------------------------------------------

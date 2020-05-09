@@ -11,7 +11,19 @@
 //  - Join the results into a string
 
 function makeIntoTitle(sentence) {
-  // Your code here
+
+  if(typeof(sentence)=='string') {
+    let words = sentence.split(" ");
+    let newSentence = [];
+    console.log(words);
+    words.forEach(word => {
+      let newWord = word.charAt(0).toUpperCase() + word.slice(1);
+      newSentence.push(newWord);
+    })
+    let final = newSentence.join(" ");
+    console.log(final);
+    return final;
+  }
 }
 
 // Add 6 total (5 more)
@@ -19,6 +31,24 @@ expect(
   makeIntoTitle('the longest road is a great song'),
   'The Longest Road Is A Great Song'
 );
+
+expect(
+  makeIntoTitle(['the longest road is a great song']),
+  undefined);
+
+  
+expect(
+  makeIntoTitle(''),
+  '');
+
+expect(
+  makeIntoTitle('5'),
+  '5');
+
+expect(
+  makeIntoTitle(5),
+  undefined);
+
 
 /**
  * -------------------------------------------------------------------

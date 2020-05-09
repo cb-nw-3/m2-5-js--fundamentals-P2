@@ -5,9 +5,12 @@
 // passed to it.
 // If it's an empty string (''), return undefined.
 
-function firstLetter(str) {
-  /* Your code here */
-  return 5;
+function firstLetter(str) { 
+  if(str.length > 0) {
+    return str[0];
+  } else {
+    return;
+  }
 }
 
 // Step 2

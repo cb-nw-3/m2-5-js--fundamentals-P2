@@ -11,12 +11,25 @@
 // f(["foo", -1]) // ""
 
 function repeat(arr) {
-  // Your code here
+  console.log(`The first element is ${arr[0]} and the second is ${arr[1]}`);
+  if(arr.length == 2 && typeof(arr[0]) == 'string' && typeof(arr[1]) == 'number'
+    && arr[1] > 0) {
+      return arr[0].repeat(arr[1]);
+    };
+  
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
 
+expect(repeat(['foo',3]),'foofoofoo');
+expect(repeat(['foo',-1]),undefined);
+expect(repeat(['',-1]),undefined);
+expect(repeat(['',5]),'');
+expect(repeat(['foo',0]),undefined);
+expect(repeat([5,2]),undefined);
+expect(repeat(['5',2]),'55');
+expect(repeat([2,3]),undefined);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

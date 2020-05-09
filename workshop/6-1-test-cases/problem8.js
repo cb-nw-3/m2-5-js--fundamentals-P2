@@ -14,10 +14,28 @@
 //  - Convert the filled array into a string (use the join method) and return it
 
 function reverse(str) {
-  // Your code here
+  if(typeof(str) == 'string') {
+    const letters = str.split('');
+    const size = letters.length;
+    console.log(letters,letters.length);
+    let reversed = [];
+    for(let i=0; i < size; i++) {
+      let last = letters.pop();
+      reversed.push(last);
+    }
+    const newString = reversed.join('');
+    console.log(newString);
+    return newString;
+  }
 }
 
 // We need 5 test cases
+expect(reverse('hello'),'olleh');
+expect(reverse('555'),'555');
+expect(reverse(5),undefined);
+expect(reverse(''),'');
+expect(reverse(['hello']),undefined);
+
 
 /**
  * -------------------------------------------------------------------
