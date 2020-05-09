@@ -54,4 +54,5 @@ function drawBoard(e) {
     CELL.style.height = `${600 / parseInt(ROWS.value)}px`;
     BOARD.appendChild(CELL);
   }
+  FORM.removeChild(START);
 }
