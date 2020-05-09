@@ -42,6 +42,7 @@ expect(makeIntoTitle("the", "longest", "road", "is a great song"), "The");
 expect(makeIntoTitle("ALL YOUR BASE ARE BELONG"), "All Your Base Are Belong");
 expect(makeIntoTitle(12412), undefined);
 expect(makeIntoTitle(["war", "and", "peace"]), undefined);
+expect(makeIntoTitle("101 dalmAtians"), "101 Dalmatians");
 
 /**
  * -------------------------------------------------------------------

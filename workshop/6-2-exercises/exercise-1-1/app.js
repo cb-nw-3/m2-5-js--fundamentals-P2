@@ -14,3 +14,28 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
+
+const btnArray = document.querySelectorAll("button");
+
+btnArray.forEach(function (item) {
+  //console.log(item.innerText);
+  item.addEventListener("click", buttonEffect);
+});
+
+function buttonEffect() {
+  //console.log(event.target.innerText);
+  switch (event.target.innerText) {
+    case "💨":
+      event.target.setAttribute("style", "opacity: 0;");
+      break;
+    case "😠":
+      event.target.setAttribute("style", "background-color: crimson;");
+      break;
+    case "😭":
+      event.target.setAttribute("style", "background-color: lightblue;");
+      break;
+    case "🥴":
+      event.target.classList.add("jitters");
+      break;
+  }
+}
