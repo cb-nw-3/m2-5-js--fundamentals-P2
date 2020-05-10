@@ -16,6 +16,17 @@ function wrapAfter40Chars(str) {
   let nextPosition = str.charAt(40)
   let finalString =''
   
+  while(str.length > 40){
+
+    finalString = finalString + str.slice(0, position) + lineBreak;
+    str = str.slice(position);
+    console.log('string', str)
+    console.log(finalString)
+  }
+
+  return finalString
+
+
   if(nextPosition === ' '){
     finalString = str.slice(0, position) + lineBreak + str.slice(41)
     console.log('inside' ,finalString)
@@ -27,6 +38,7 @@ function wrapAfter40Chars(str) {
 
 }
 
+wrapAfter40Chars('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu')
 // Test case 1: No space after newline
 expect(
   wrapAfter40Chars(
