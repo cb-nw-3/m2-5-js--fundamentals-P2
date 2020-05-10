@@ -33,15 +33,18 @@ decrement(decrement(square(square(3))));
 
 // Q3
 duplicateString(reverseString("hello"));
-(reverseString("hello") //"olleh"
+ //"olleh"
+(reverseString("hello")
 //duplicateString("olleh")
-olleholleh 
+result:
+"olleholleh"
 
 
 // Q4
 reverseString(duplicateString(duplicateString("foo")));
-foofoo
-foofoofoofoo
-result: oofoofoofoof
+"foofoo"
+"foofoofoofoo"
+result:
+"oofoofoofoof"
 
 
