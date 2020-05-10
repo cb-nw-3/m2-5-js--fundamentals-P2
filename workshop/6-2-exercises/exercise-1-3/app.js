@@ -19,3 +19,44 @@
 
 // HINT:
 // to remove the 'jitters' class, check the length of the classList.
+
+let btnList = document.getElementById("btn-list");
+btnList.addEventListener("click", function (event) {
+  let buttonIdSelection = event.target.id;
+  if (buttonIdSelection === "btn-1") {
+    if (document.getElementById(buttonIdSelection).style.opacity == 0) {
+      document.getElementById(buttonIdSelection).style.opacity = 100;
+    } else {
+      document.getElementById(buttonIdSelection).style.opacity = 0;
+    }
+  } else if (buttonIdSelection === "btn-2") {
+    if (
+      document.getElementById(buttonIdSelection).style.backgroundColor == "gold"
+    ) {
+      document.getElementById(buttonIdSelection).style.backgroundColor =
+        "crimson";
+    } else {
+      document.getElementById(buttonIdSelection).style.backgroundColor = "gold";
+    }
+  } else if (buttonIdSelection === "btn-3") {
+    if (
+      document.getElementById(buttonIdSelection).style.backgroundColor == "gold"
+    ) {
+      document.getElementById(buttonIdSelection).style.backgroundColor =
+        "lightblue";
+    } else {
+      document.getElementById(buttonIdSelection).style.backgroundColor = "gold";
+    }
+  } else if (buttonIdSelection === "btn-4") {
+    document.getElementById(buttonIdSelection).classList.toggle("jitters");
+  } else if (buttonIdSelection === "reset") {
+    for (let index = 1; index <= 4; index++) {
+      const resetButton = document.getElementById("btn-" + index);
+      resetButton.style.backgroundColor = "gold";
+      resetButton.style.opacity = 100;
+      if (index === 4) {
+        resetButton.classList.remove("jitters");
+      }
+    }
+  }
+});
