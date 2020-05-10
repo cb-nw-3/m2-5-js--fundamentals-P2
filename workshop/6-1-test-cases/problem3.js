@@ -27,8 +27,7 @@ expect(sumDigits([-1]), undefined);
 expect(sumDigits([-1, 0, 1]), undefined);
 expect(sumDigits([-1, -1]), -2);
 expect(sumDigits([0, 0]), 0);
-var a = "hello";
-expect(sumDigits([-1, a]), undefined);
+expect(sumDigits([-1, "a"]), undefined);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
