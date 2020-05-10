@@ -4,9 +4,9 @@
 // string. If no such letter exists, it should return undefined.
 //
 // For example:
-// getLetterAtIndex("hello", 1); // e
-// getLetterAtIndex("", 4);      // undefined
-// getLetterAtIndex("abc", 0);   // a
+// getLetterAtIndex(["hello", 1]); // e
+// getLetterAtIndex(["", 4]);      // undefined
+// getLetterAtIndex(["abc", 0]);   // a
 
 function getLetterAtIndex(string, i) {
   // check if argument i is a number
