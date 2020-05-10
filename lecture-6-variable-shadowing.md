@@ -71,7 +71,7 @@ if (isHungry) {
 }
 
 // What is the value of `fruit`?
-console.log(fruit);
+console.log(fruit); // fruit = watermelon
 ```
 
 ---
@@ -86,7 +86,7 @@ function turnOnHeater() {
 }
 
 // What is the value of `roomTemperature`?
-console.log(roomTemperature);
+console.log(roomTemperature); // temperature = 21
 ```
 
 ---
@@ -106,7 +106,7 @@ if (mood === '😪') {
 }
 
 // What is the value of `mood`?
-console.log(mood);
+console.log(mood); // ['😳', '🤢', '🥴']
 ```
 
 ---
@@ -126,7 +126,7 @@ bake();
 
 function bake(recipe) {
   // What is the value of `recipe`?
-  console.log(recipe);
+  console.log(recipe); // undefined
 }
 ```
 

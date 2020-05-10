@@ -25,18 +25,57 @@
 // solution comes more quickly :)
 
 function uniqueElements(input) {
-  // Your code here
+  // if (
+  //   typeof Array.isArray(input) === true && 
+  //   input.length === 2 && 
+  //   typeof Array.isArray(input[0]) === true && 
+  //   typeof Array.isArray(input[1]) === true
+  // ) {
+  //   let newArr = [];
+  //   let checker = true;
+
+  //   for (let i = 0; i < input[0].length; i++) {
+  //     for (let j = 0; j < input[1].length; i++) {
+  //       if (input[0][i] === input[1][j]) {
+  //         checker = false;
+  //       }
+  //     }
+  //     if (checker === true) {
+  //       newArr.push(input[0][i]);
+  //     }
+  //     checker = true;
+  //   }
+
+  //   for (let i = 0; i < input[1].length; i++) {
+  //     for (let j = 0; j < input[0].length; i++) {
+  //       if (input[1][i] === input[0][j]) {
+  //         checker = false;
+  //       }
+  //     }
+  //     if (checker === true) {
+  //       newArr.push(input[1][i]);
+  //     }
+  //     checker = true;
+  //   }
+
+  //   return newArr
+  // } else {
+  //   return undefined
+  // }
 }
 
 // Add 5 test cases
+expect(uniqueElements([[1, 2, 3, 4], [2, 3, 4, 5]]), [1, 5])
 
-/**
+
+/*
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
  * -------------------------------------------------------------------
  */
+
 function expect(result, value) {
-  if (result === value) {
+  if (result == value) {
     console.log('✅ Test succeeded');
   } else {
     console.log(

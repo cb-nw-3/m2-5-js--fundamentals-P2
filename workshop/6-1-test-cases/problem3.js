@@ -8,18 +8,36 @@
 //   - `typeof 3` returns 'number')
 
 function sumDigits(input) {
-  // Your code here
+  // check if argument is an array of two numbers
+  if (
+    typeof input[0] === "number" && 
+    typeof input[1] === "number" && 
+    input.length === 2
+  ) {
+    // return sum if true
+    return input[0] + input[1]
+  } else {
+    return undefined
+  }
 }
 
 // Add 5 more test cases here! 7 total
 expect(sumDigits([2, 5]), 7);
 expect(sumDigits([-1, 0]), -1);
+expect(sumDigits(["-1", 0]), undefined);
+expect(sumDigits(["qwe", "qwe"]), undefined);
+expect(sumDigits([-1, "qwe"]), undefined);
+expect(sumDigits([-1]), undefined);
+expect(sumDigits([-1, 0, 2]), undefined);
+expect(sumDigits(12, 12), undefined);
+expect(sumDigits([-1, false]), undefined);
 
-/**
+/*
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
  * -------------------------------------------------------------------
  */
+
 function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
