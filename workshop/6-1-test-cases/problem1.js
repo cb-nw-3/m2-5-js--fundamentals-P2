@@ -6,7 +6,7 @@
 // If it's an empty string (''), return undefined.
 
 function firstLetter(str) {
-  /* Your code here */
+  return str[0];
   return 5;
 }
 
@@ -20,7 +20,30 @@ expect(firstLetter('Zebra'), 'Z');
 expect(firstLetter('lion'), 'l');
 expect(firstLetter(''), undefined);
 
-// Step 3
+expect(firstLetter('steuerberater'), 's');
+expect(firstLetter('aktiengesellschaft'), 'a');
+expect(firstLetter('Oberbefehlshaber'), 'O');
+expect(firstLetter('Ägypten'), 'Ä');
+expect(firstLetter('Ölbrenner'), 'Ö');
+
+expect(firstLetter('4H'), '4');
+expect(firstLetter('_underscore_'), '_');
+expect(firstLetter('333'), '3');
+expect(firstLetter('$4'), '$');
+expect(firstLetter('#teamwork'), '#');
+
+expect(firstLetter('+++'), '+');
+expect(firstLetter(989989), undefined);
+expect(firstLetter(' eyeopener'), ' ');
+expect(firstLetter(666), undefined);
+expect(firstLetter('blah'), 'b');
+
+expect(firstLetter('Ça va'), 'Ç');
+expect(firstLetter('làlàlà'), 'l');
+expect(firstLetter('Calendrier'), 'C');
+expect(firstLetter('èèè'), 'è');
+expect(firstLetter('ééé'), 'é');
+// St
 // Run this file with Node.
 // When all the tests pass, move on to the next problem
 

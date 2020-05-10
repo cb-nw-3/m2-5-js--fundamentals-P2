@@ -11,11 +11,22 @@
 //  - You'll need to use the split string method
 //  - `forEach` might be helpful
 
-function longestWord(str) {
-  // Place solution here
+function f(str) {
+  const words = str.split(' ');
+  let longest = '';
+
+  for (i = 0; i < words.length; i++) {
+    if (longest.length <= words[i].length)
+      longest = words[i];
+  }
+  return longest;
 }
 
-// We need 5 test cases
+expect(f('my friend works on a boat on the danube river'), 'danube');
+expect(f('in the province of the mind, i am unlimited'), 'unlimited');
+expect(f(''),"");
+expect(f('four score and seven years ago, our fathers brought forth on this continent'), 'contenent');
+expect(f('naDevvo yIghoS!'), 'yIghoS!');
 
 /**
  * -------------------------------------------------------------------

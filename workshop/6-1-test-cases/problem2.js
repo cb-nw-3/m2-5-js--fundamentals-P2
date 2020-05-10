@@ -8,7 +8,14 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  /* Your code here */
+  if(str[str.length-1] === ''){
+    return 'undefined';
+  }else if(Number.isInteger(str[str.length-1])===true){
+    return 'undefined';
+  }else{
+    return str[str.length-1];
+  }
+  
 }
 
 // Step 2
@@ -16,6 +23,10 @@ function lastCharacter(str) {
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
+expect(lastCharacter(''), undefined);
+expect(lastCharacter(3666), undefined);
+expect(lastCharacter('Ölmarkt'), 't');
+expect(lastCharacter('alsdkfjadofkjadsöflkjadsjföliasjfoadsijdföoasidfja'), 'a');
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠

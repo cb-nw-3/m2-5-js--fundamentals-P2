@@ -11,11 +11,30 @@
 // f(["foo", -1]) // ""
 
 function repeat(arr) {
-  // Your code here
+  let str = arr[0];
+  let multiplier = arr[1];
+  if(arr[1] === 0){
+    return '';
+  }else if(arr[1] < -0){
+    return '';
+  }else if(1 > arr[1] > 0 || arr[1] === NaN){
+    return undefined;
+  }else{
+    return str.repeat(arr[1]);
+  }
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+
+expect(repeat(['mult', 2]), 'multmult');
+expect(repeat(['sub', 4]), 'subsubsubsub');
+expect(repeat(['sub', .8]), undefined);
+expect(repeat(['pow', 2]), 'powpow');
+expect(repeat(['whoa', 4]), 'whoawhoawhoawhoa');
+expect(repeat(['add', 0]), '');
+expect(repeat(['mult', -1]), '');
+expect(repeat(['sub', 4]), 'subsubsubsub');
 
 /**
  * -------------------------------------------------------------------

@@ -13,11 +13,25 @@
 //    empty array by pushing each character into it
 //  - Convert the filled array into a string (use the join method) and return it
 
+
 function reverse(str) {
-  // Your code here
+  let backwards = [];
+  let frontwards = [];
+  frontwards = str.split('');
+  let num = frontwards.length - 1;
+  for(i=num; i>=0; i--){
+    backwards.push(frontwards[i]);
+  }return backwards.join('');
+  backwards.length = 0;
 }
 
-// We need 5 test cases
+
+expect(reverse('hi'), 'ih');
+expect(reverse('12345'), '54321');
+expect(reverse('donaudampfschiffahrtsgesellschaftskapitaen'),"neatipakstfahcsllesegstrhaffihcsfpmaduanod");
+expect(reverse('backwards'), 'sdrawkcab');
+expect(reverse('front'), 'tnorf');
+
 
 /**
  * -------------------------------------------------------------------

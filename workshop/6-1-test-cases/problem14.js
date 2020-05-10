@@ -7,9 +7,22 @@
 // - If the next character after a cut is a space, then do not display it.
 // - To represent a newline character, you can use "\n".
 
-function wrapAfter40Chars(str) {
-  // Your code here!
+function f(str) {
+  const charArr = str.split('');
+  let res = '';
+
+  for (let i = 0; i < charArr.length; i++) {
+    if (i % 40 === 0) {
+      res += '\n';
+      if (charArr[i] !== ' ') {
+        res += charArr[i];
+      }
+    } else {
+      res += charArr[i];
+    }
+  }
 }
+
 
 // Test case 1: No space after newline
 expect(

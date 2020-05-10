@@ -7,11 +7,26 @@
 // JAVASCRIPT -> No
 
 function checkIsPalindrome(inputString) {
-  // Your code here
+  let forward = inputString.split('');
+  let backward = [];
+  for(i=forward.length -1; i>=0; i--){
+    backward.push(forward[i]);
+  }
+    let first = forward.join('');
+    let second = backward.join('');
+    if(first == second){
+      return true;
+    }else{
+      return false;
+    }
 }
 
-// Add 6 test cases
-
+expect(checkIsPalindrome('hello'), false);
+expect(checkIsPalindrome('madam'), true);
+expect(checkIsPalindrome('redder'), true);
+expect(checkIsPalindrome('blubber'), false);
+expect(checkIsPalindrome('spider'), false);
+expect(checkIsPalindrome('kayak'), true);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

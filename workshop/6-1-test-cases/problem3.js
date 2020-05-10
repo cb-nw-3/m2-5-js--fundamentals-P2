@@ -7,8 +7,15 @@
 // HINT: You can use the typeof function to check the type of each element:
 //   - `typeof 3` returns 'number')
 
-function sumDigits(input) {
-  // Your code here
+function f(input) {
+  if (
+    input.length !== 2 ||
+    typeof input[0] !== 'number' ||
+    typeof input[1] !== 'number'
+  ) {
+    return undefined;
+  }
+  return input[0] + input[1];
 }
 
 // Add 5 more test cases here! 7 total

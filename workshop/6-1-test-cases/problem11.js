@@ -8,8 +8,18 @@ let verifyEquals = require('./verify-equals.js');
 // - If no arguments are passed, return `undefined`
 
 function addNumbers(...nums) {
-  // Insert missing solution please
+  nums.forEach(function sum_sq(array) {
+    var sum = 0, 
+        i = array.length;
+    while (i--) 
+     sum += Math.pow(array[i], 2);
+    return sum;
+  })
 }
+
+
+
+
 
 // Add 7 more test cases.
 expect(addNumbers(1, 2, 3), 14); // 1 + 2**2 + 3**2 = 1 + 4 + 9 = 14
