@@ -13,3 +13,22 @@
 // - one event listener per input
 
 // If you need extra hints, see somebody... :)
+
+let boardSize = document.getElementById("board");
+boardSize.style.height = "600px";
+boardSize.style.width = "600px";
+
+let creatButton = document.getElementById("creator");
+creatButton.addEventListener("click", function () {
+  let formForUserRows = document.getElementById("rows-input").value;
+  let formForUserColumns = document.getElementById("columns-input").value;
+  boardSize.style.gridTemplateRows = "repeat(" + formForUserRows + ",auto)";
+  boardSize.style.gridTemplateColumns =
+    "repeat(" + formForUserColumns + ",auto)";
+  for (let index = 0; index < formForUserRows * formForUserColumns; index++) {
+    const myCells = document.createElement("div");
+    myCells.classList.add("cell");
+    myCells.setAttribute("id", "cell-" + index);
+    boardSize.appendChild(myCells);
+  }
+});
