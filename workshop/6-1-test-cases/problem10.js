@@ -11,14 +11,31 @@
 //  - Join the results into a string
 
 function makeIntoTitle(sentence) {
-  // Your code here
+  let newSentence = "";
+  sentence = sentence.split(" ");
+  sentence.forEach((element) => {
+    newSentence = newSentence.concat(
+      element.charAt(0).toUpperCase() + element.slice(1) + " "
+    );
+  });
+  return newSentence.trim();
 }
 
 // Add 6 total (5 more)
 expect(
-  makeIntoTitle('the longest road is a great song'),
-  'The Longest Road Is A Great Song'
+  makeIntoTitle("the longest road is a great song"),
+  "The Longest Road Is A Great Song"
 );
+
+expect(
+  makeIntoTitle("Wake up, it's time to go to work!"),
+  "Wake Up, It's Time To Go To Work!"
+);
+
+expect(makeIntoTitle("We Are not your enemy!"), "We Are Not Your Enemy!");
+expect(makeIntoTitle("please!! Leave me alone"), "Please!! Leave Me Alone");
+expect(makeIntoTitle("hump day!"), "Hump Day!");
+expect(makeIntoTitle(""), "");
 
 /**
  * -------------------------------------------------------------------
@@ -27,10 +44,8 @@ expect(
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

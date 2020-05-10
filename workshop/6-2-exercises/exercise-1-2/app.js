@@ -7,6 +7,35 @@
 // button two turns 'crimson'
 // button three turns 'lightblue'
 // button four starts shaking... (animation provided in styles.css)
+var btnGroup = document.querySelectorAll(".buttons button");
+
+for (let index = 0; index < btnGroup.length; index++) {
+  btnGroup[index].style.backgroundColor = "gold";
+  console.log(btnGroup[index]);
+}
+
+let btns = document.querySelector(".buttons");
+btns.addEventListener("click", function (event) {
+  let btnClicked = event.target;
+  switch (btnClicked.id) {
+    case "btn-1":
+      btnClicked.style.opacity = btnClicked.style.opacity === "0" ? "100" : "0";
+      break;
+    case "btn-2":
+      btnClicked.style.backgroundColor =
+        btnClicked.style.backgroundColor === "gold" ? "crimson" : "gold";
+      break;
+    case "btn-3":
+      btnClicked.style.backgroundColor =
+        btnClicked.style.backgroundColor === "gold" ? "lightblue" : "gold";
+      break;
+    case "btn-4":
+      btnClicked.classList.contains("jitters")
+        ? btnClicked.classList.remove("jitters")
+        : btnClicked.classList.add("jitters");
+      break;
+  }
+});
 
 // STEP 2
 // This time the buttons should toggle.

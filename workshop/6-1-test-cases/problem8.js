@@ -14,8 +14,23 @@
 //  - Convert the filled array into a string (use the join method) and return it
 
 function reverse(str) {
-  // Your code here
+  let newSentence = [];
+  str = str.split(" ");
+  str.forEach((element) => {
+    let newWord = [];
+    for (i = element.length - 1; i >= 0; i--) {
+      newWord.push(element[i]);
+    }
+    newSentence.unshift(newWord.join("") + " ");
+  });
+  return newSentence.join("").trim();
 }
+
+expect(reverse("how are you"), "uoy era woh");
+expect(reverse("hello"), "olleh");
+expect(reverse("oh my god"), "dog ym ho");
+expect(reverse("this is my school"), "loohcs ym si siht");
+expect(reverse("I am at the football game"), "emag llabtoof eht ta ma I");
 
 // We need 5 test cases
 
@@ -26,10 +41,8 @@ function reverse(str) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

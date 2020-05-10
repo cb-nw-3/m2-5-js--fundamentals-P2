@@ -12,8 +12,25 @@
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+  let longestLength = 0;
+  let word = "";
+  str = str.split(" ");
+  str.forEach((element) => {
+    if (element.length >= longestLength) {
+      longestLength = element.length;
+      word = element;
+    }
+  });
+  return word;
 }
+expect(
+  longestWord("This is a really looooooooooong sentence"),
+  "looooooooooong"
+);
+expect(longestWord("This is not good"), "good");
+expect(longestWord("This mike is not"), "mike");
+expect(longestWord("looooooooong sentences are not good "), "looooooooong");
+expect(longestWord("short sentences are good "), "sentences");
 
 // We need 5 test cases
 
@@ -24,10 +41,8 @@ function longestWord(str) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

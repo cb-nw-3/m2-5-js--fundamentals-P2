@@ -11,8 +11,30 @@
 // f(["foo", -1]) // ""
 
 function repeat(arr) {
-  // Your code here
+  if (arr[1] <= 0) {
+    return "";
+  } else if (isNaN(arr[1])) {
+    return undefined;
+  } else {
+    let i = 0;
+    let str = "";
+    while (i < arr[1]) {
+      str = str.concat(arr[0]);
+      i++;
+    }
+    return str;
+  }
 }
+
+expect(repeat(["foo", 3]), "foofoofoo");
+expect(repeat(["john", 6]), "johnjohnjohnjohnjohnjohn");
+expect(repeat(["joy", 1]), "joy");
+expect(repeat(["joy", 0]), "");
+expect(repeat(["joy", -5]), "");
+expect(repeat(["joy", "mike"]), undefined);
+expect(repeat(["joy", "⛔"]), undefined);
+expect(repeat(["cake", 4]), "cakecakecakecake");
+expect(repeat(["johnny", 7]), "johnnyjohnnyjohnnyjohnnyjohnnyjohnnyjohnny");
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
@@ -24,10 +46,8 @@ function repeat(arr) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

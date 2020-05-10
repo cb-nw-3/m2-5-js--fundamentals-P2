@@ -14,3 +14,20 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
+
+let btns = document.querySelector(".buttons");
+btns.addEventListener("click", function (event) {
+  switch (event.srcElement.id) {
+    case "btn=1":
+      event.srcElement.style.visibility = "hidden";
+      break;
+    case "btn-2":
+      event.srcElement.style.backgroundColor = "crimson";
+      break;
+    case "btn-3":
+      event.srcElement.style.backgroundColor = "lightblue";
+      break;
+    default:
+      event.srcElement.classList.add("jitters");
+  }
+});

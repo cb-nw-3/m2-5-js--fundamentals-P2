@@ -9,13 +9,20 @@
 
 function lastCharacter(str) {
   /* Your code here */
+  str = str === "" ? undefined : str.split("")[str.length - 1];
+  return str;
 }
 
 // Step 2
 // You're given 1 test case. Add 4 more, making sure to cover all of the
 // conditions specified above (don't forget empty string and number!!)
 
-expect(lastCharacter('max'), 'x');
+expect(lastCharacter("max"), "x");
+expect(lastCharacter(""), undefined);
+expect(lastCharacter("pneumonoultramicroscopicsilicovolcanoconiosis"), "s");
+expect(lastCharacter("max"), "x");
+expect(lastCharacter("mikE"), "E");
+expect(lastCharacter("oh my god!"), "!");
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠
@@ -34,7 +41,7 @@ expect(lastCharacter('max'), 'x');
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
