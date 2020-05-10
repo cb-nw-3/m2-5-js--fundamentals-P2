@@ -10,11 +10,42 @@
 // f(["fo", 3]) // "fofofo"
 // f(["foo", -1]) // ""
 
+/*
+1. Le premier élément du arr[0] = string
+2. Le deuxième élément du arr [1] = number
+3. répeter le arr [0] par le nombre du arr [1]
+4. si le arr [1] est négatif ou 0
+      retourner un string vide
+5. si le arr ne respecte pas l'ordre [string, number]
+      retourner undefined
+*/
+
 function repeat(arr) {
-  // Your code here
+  if (typeof arr[0] === "string" && typeof arr[1] === "number") {
+    if (arr[1] <= 0) {
+      return "";
+    } else {
+      let result = "";
+      for (let index = 0; index < arr[1]; index++) {
+        result = result + arr[0];
+      }
+      console.log(result);
+      return result;
+    }
+  } else {
+    return undefined;
+  }
 }
 
 // We need 7 test cases.
+expect(repeat(["apple", 2]), "appleapple");
+expect(repeat(["a", 3]), "aaa");
+expect(repeat(["f", 5]), "fffff");
+expect(repeat([2, 2]), undefined);
+expect(repeat([3, "n"]), undefined);
+expect(repeat(["z", -1]), "");
+expect(repeat(["apple", 0]), "");
+
 // Don't forget to test all of the question parameters
 
 /**
@@ -24,10 +55,8 @@ function repeat(arr) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }
