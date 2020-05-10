@@ -13,11 +13,27 @@
 //    empty array by pushing each character into it
 //  - Convert the filled array into a string (use the join method) and return it
 
+/*
+1. si c'est un string le mettre en array
+2. créer un array vide
+3. inverser les character dans le array
+4. mettre le array en string
+*/
+
 function reverse(str) {
-  // Your code here
+  let result = "";
+  for (let index = str.length; index >= 0; index--) {
+    result = result + str.charAt(index);
+  }
+  return result;
 }
 
 // We need 5 test cases
+expect(reverse("hi"), "ih");
+expect(reverse("apple"), "elppa");
+expect(reverse("allo"), "olla");
+expect(reverse("bye"), "eyb");
+expect(reverse("hey"), "yeh");
 
 /**
  * -------------------------------------------------------------------
@@ -26,10 +42,8 @@ function reverse(str) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }
