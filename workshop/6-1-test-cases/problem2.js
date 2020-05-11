@@ -9,6 +9,13 @@
 
 function lastCharacter(str) {
   /* Your code here */
+  if (str === "") {
+    return undefined;
+  } else if (typeof(str) == 'number') {
+    return undefined;
+  } else if (typeof(str) == 'string') {
+    return str.charAt(str.length - 1);
+  }
 }
 
 // Step 2
@@ -16,6 +23,11 @@ function lastCharacter(str) {
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
+expect(lastCharacter(''), undefined);
+expect(lastCharacter(123), undefined);
+expect(lastCharacter('bacon'), 'n');
+expect(lastCharacter('ZebrA'), 'A');
+
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠

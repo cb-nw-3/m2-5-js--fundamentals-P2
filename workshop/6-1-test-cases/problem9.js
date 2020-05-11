@@ -13,10 +13,32 @@
 
 function longestWord(str) {
   // Place solution here
+  if (str === "") {
+    return "";
+  }
+  else {  var Arr = str.split(" ");
+  var longest = 0;
+  var word = null;
+
+  Arr.forEach(function(str) {
+      if (longest < str.length) {
+          longest = str.length;
+          word = str;
+      }
+  });
+
+return word;
+}
+
+
 }
 
 // We need 5 test cases
-
+expect(longestWord("hey hello morning"), "morning")
+expect(longestWord(""), "")
+expect(longestWord("hey goodbye hi"), "goodbye")
+expect(longestWord("goodbye-again hello morning"), "goodbye-again")
+expect(longestWord("123456789abc hello morning"), "123456789abc")
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

@@ -8,10 +8,16 @@
 
 function checkIsPalindrome(inputString) {
   // Your code here
+  return inputString === inputString.split('').reverse().join('');
 }
 
 // Add 6 test cases
-
+expect(checkIsPalindrome("madam"), true);
+expect(checkIsPalindrome("racecar"), true);
+expect(checkIsPalindrome("11111"), true);
+expect(checkIsPalindrome("wow"), true);
+expect(checkIsPalindrome("anna"), true);
+expect(checkIsPalindrome("javascript"), false);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
