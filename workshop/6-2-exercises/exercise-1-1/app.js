@@ -14,3 +14,27 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
+
+let buttons = document.querySelector('#btn-list');
+
+console.log(buttons);
+buttons.addEventListener('click', buttonResponse);
+
+function buttonResponse(event)
+{
+    switch (event.target.id)
+    {
+        case 'btn-1':
+            event.target.style.display = "none";
+            break;
+        case 'btn-2':
+            event.target.style.backgroundColor = "crimson";
+            break;
+        case 'btn-3':
+            event.target.style.backgroundColor = "lightblue";
+            break;
+        case 'btn-4':
+            event.target.classList.add('jitters');
+            break;
+    }
+}
