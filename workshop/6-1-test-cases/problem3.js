@@ -8,12 +8,48 @@
 //   - `typeof 3` returns 'number')
 
 function sumDigits(input) {
-  // Your code here
+  if (input.length != 2)
+  {
+    return undefined;
+  }
+  let total = 0;
+
+  let containsNonNumbers = false;
+
+
+
+  input.forEach( 
+      function (element) {
+        // console.log(element);
+        // console.log(typeof(element));
+        if (typeof(element) === 'number') {
+          total = total + element;
+          // console.log('is number')
+        } else {
+          // console.log('is not number')
+          containsNonNumbers = true;        
+        }
+      });
+
+     
+      if (containsNonNumbers)
+      {
+        return undefined;
+      }
+      else
+      {
+        return total;
+      }
+
 }
 
 // Add 5 more test cases here! 7 total
 expect(sumDigits([2, 5]), 7);
 expect(sumDigits([-1, 0]), -1);
+expect(sumDigits([99, 1]), 100);
+expect(sumDigits(["dave", 0]), undefined);
+expect(sumDigits([-1, 0, 3]), undefined);
+expect(sumDigits([1]), undefined);
 
 /**
  * -------------------------------------------------------------------

@@ -15,7 +15,27 @@
 
 function reverse(str) {
   // Your code here
+
+    if (typeof(str) != 'string') {
+      console.log ('input is not a string');
+      return undefined;
+    }
+
+    let strArray = str.split('');
+    let reveresedArray = [];
+    for (i=(strArray.length-1); i>-1; i--) {
+      reveresedArray.push(strArray[i]);
+    }
+    return reveresedArray.join('');
+
 }
+
+console.log(reverse("dave"));
+expect (reverse("dave"), "evad");
+expect (reverse("1234"), "4321");
+expect (reverse(1234), undefined);
+expect (reverse("ggggg"), "ggggg");
+expect (reverse(["hello"]), undefined);
 
 // We need 5 test cases
 

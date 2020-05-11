@@ -6,8 +6,10 @@
 // If it's an empty string (''), return undefined.
 
 function firstLetter(str) {
-  /* Your code here */
+return str[0];
 }
+
+
 
 // Step 2
 // We need 5 test cases. The first input is provided.

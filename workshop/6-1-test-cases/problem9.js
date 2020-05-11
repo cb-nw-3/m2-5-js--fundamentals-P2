@@ -12,8 +12,35 @@
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+
+  if (typeof(str) != 'string') {
+    console.log ('input is not a string');
+    return undefined;
+  }
+
+  let indivWords = str.split(' ');
+  let longestLength = 0;
+  let longestWord;
+  indivWords.forEach(
+    function (element) {
+      if (element.length >= longestLength)
+      {
+        longestLength = element.length;
+        longestWord = element;
+      }
+    }
+  );
+  return longestWord;
 }
+
+expect(longestWord("hey hello morning"), "morning");
+expect(longestWord("hey morning hello mornin1"), "mornin1");
+expect(longestWord(3333), undefined); 
+expect(longestWord("hey hey         hello hey"), "hello"); // interesting test example, use a bunch of spaces
+expect(longestWord("hey hey hello hey"), "hello"); 
+expect(longestWord("hey morning hello mornin1"), "morning"); // test should fail!
+
+
 
 // We need 5 test cases
 
