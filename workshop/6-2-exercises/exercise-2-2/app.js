@@ -34,6 +34,7 @@ rowsValue.addEventListener("blur", function () {
 });
 
 function setUpBoard(numOfRows, numOfCol) {
+  gameBoard.innerHTML = "";
   gameBoard.style.gridTemplateColumns = "repeat(" + numOfCol + ", 1fr)";
   gameBoard.style.gridTemplateRows = "repeat(" + numOfRows + ", 1fr)";
   for (let i = 0; i < numOfRows * numOfCol; i++) {
