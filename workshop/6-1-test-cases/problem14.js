@@ -1,4 +1,4 @@
-// Problem 14
+// Problem 14 (optional)
 // ----------
 // Make this function return the input string wrapped to 40 characters per line.
 // This means you'll have to insert a newline character after every 40
