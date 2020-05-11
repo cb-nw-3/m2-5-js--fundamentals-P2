@@ -15,9 +15,20 @@
 
 function reverse(str) {
   // Your code here
+  let reversedStr = '';
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversedStr += str.charAt(i);
+  }
+  return reversedStr;
 }
 
 // We need 5 test cases
+expect(reverse("hello"), "olleh")
+expect(reverse("123hello"), "olleh321")
+expect(reverse("hello123"), "321olleh")
+expect(reverse("hello-hello"), "olleh-olleh")
+expect(reverse("12345"), "54321")
 
 /**
  * -------------------------------------------------------------------
