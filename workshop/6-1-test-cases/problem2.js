@@ -8,14 +8,28 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  /* Your code here */
+  if (str === "") {
+    let arr = str.split("");
+    let lastLetter = arr[arr.length - 1];
+    return undefined;
+  } else if (typeof str === "number") {
+    return undefined;
+  } else {
+    let arr = str.split("");
+    let lastLetter = arr[arr.length - 1];
+    return lastLetter;
+  }
 }
 
 // Step 2
 // You're given 1 test case. Add 4 more, making sure to cover all of the
 // conditions specified above (don't forget empty string and number!!)
 
-expect(lastCharacter('max'), 'x');
+expect(lastCharacter("max"), "x");
+expect(lastCharacter(3), undefined);
+expect(lastCharacter(""), undefined);
+expect(lastCharacter("things"), "s");
+expect(lastCharacter("one,two"), "o");
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠
@@ -34,7 +48,7 @@ expect(lastCharacter('max'), 'x');
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }

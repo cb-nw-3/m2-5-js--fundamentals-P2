@@ -1,4 +1,4 @@
-let verifyEquals = require('./verify-equals.js');
+// let verifyEquals = require('./verify-equals.js');
 
 // Problem 11
 // ----------
@@ -8,12 +8,33 @@ let verifyEquals = require('./verify-equals.js');
 // - If no arguments are passed, return `undefined`
 
 function addNumbers(...nums) {
-  // Insert missing solution please
+  if (nums.length > 0) {
+    let total;
+
+    nums.forEach((num) => {
+      if (isNaN(num)) {
+        return undefined;
+      }
+      let square = num * num;
+      if (total === undefined) {
+        total = square;
+      } else {
+        total += square;
+      }
+    });
+    return total;
+  }
 }
 
 // Add 7 more test cases.
 expect(addNumbers(1, 2, 3), 14); // 1 + 2**2 + 3**2 = 1 + 4 + 9 = 14
-
+expect(addNumbers(), undefined);
+expect(addNumbers(1, 2, 3, "skip", "skip"), 14);
+expect(addNumbers(8, 8), 128);
+expect(addNumbers("skip"), undefined);
+expect(addNumbers(7), 49);
+expect(addNumbers("", "skip", 4, 5), 41);
+expect(addNumbers("", 4), 16);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
@@ -21,7 +42,7 @@ expect(addNumbers(1, 2, 3), 14); // 1 + 2**2 + 3**2 = 1 + 4 + 9 = 14
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
