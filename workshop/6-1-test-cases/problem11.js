@@ -17,6 +17,13 @@ function addNumbers(input) {
 // Add 7 more test cases.
 expect(addNumbers([1, 2, 3]), 14); // 1 + 2**2 + 3**2 = 1 + 4 + 9 = 14
 
+expect(addNumbers([1, 1, 1]), 3);
+expect(addNumbers([1, 2, 4]), 21);
+expect(addNumbers([1, 2, 5]), 30);
+expect(addNumbers([1, 2, 6]), 41);
+expect(addNumbers([1, 2, 7]), 54);
+expect(addNumbers([1, 2, 8]), 69);
+expect(addNumbers([1, 2, 9]), 86);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
