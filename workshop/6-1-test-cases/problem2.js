@@ -8,7 +8,9 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  /* Your code here */
+  if (str.charAt(str.length - 1) === '') return undefined;
+  else return str.charAt(str.length - 1);
+
 }
 
 // Step 2
@@ -16,6 +18,9 @@ function lastCharacter(str) {
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
+expect(lastCharacter('hello '), ' ');
+expect(lastCharacter('cat5'), '5');
+expect(lastCharacter('hello'), 'o');
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠
@@ -26,6 +31,11 @@ expect(lastCharacter('max'), 'x');
 //    and then -1 beers, and then "malaise" beers, and then -Infinity beers…”
 //
 // 😂
+
+expect(lastCharacter('hello@'), '@');
+expect(lastCharacter('111111111111222222222333333333344444444444555555555566666666677777778888889999990000000'), '0');
+expect(lastCharacter('^&#^!@&*#^!@(!l '), ' ');
+expect(lastCharacter('//////////////////////'), '/');
 
 /**
  * -------------------------------------------------------------------

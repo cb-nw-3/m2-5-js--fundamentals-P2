@@ -3,17 +3,29 @@
 // This function expects an array of 2 numbers as input (e.g. [1, 2])
 // Make this function return the sum of the two numbers that are passed to it.
 // If anything other than an array with 2 numbers is passed, return undefined.
-//
+// 
 // HINT: You can use the typeof function to check the type of each element:
 //   - `typeof 3` returns 'number')
 
 function sumDigits(input) {
-  // Your code here
+  if (
+    input.length !== 2 ||
+    typeof input[0] !== 'number' ||
+    typeof input[1] !== 'number'
+  ) {
+    return undefined;
+  }
+  return input[0] + input[1];
 }
 
 // Add 5 more test cases here! 7 total
 expect(sumDigits([2, 5]), 7);
 expect(sumDigits([-1, 0]), -1);
+expect(sumDigits([0, 0]), 0);
+expect(sumDigits([15, 10]), 25);
+expect(sumDigits([-10, -10]), -20);
+expect(sumDigits([0, 5]), 5);
+expect(sumDigits([37734382, 3423423423]), 3461157805);
 
 /**
  * -------------------------------------------------------------------

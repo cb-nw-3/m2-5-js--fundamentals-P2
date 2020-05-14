@@ -8,7 +8,29 @@
 // - To represent a newline character, you can use "\n".
 
 function wrapAfter40Chars(str) {
-  // Your code here!
+
+  // The number we want to add new line to make the sentence "wrap"
+  let wrapAmount = 39;
+
+  //Final output with the new lines added
+  let wrappedResult = '';
+
+  // create a loop to check string length VS max character length + to add \n after 40th character
+  for (i = 0; i < str.length; i++) {
+    //Check every 40 characters
+    remainderForty = i % wrapAmount;
+    //If there is no remainder, we must be at every 40 characters
+    if (remainderForty == 0 && i != 0) {
+      wrappedResult += str[i] + '\n';
+      let checkNextChar = str[i + 1];
+      if (checkNextChar === ' ') {
+        i++;
+      }
+    } else {
+      wrappedResult += str[i];
+    }
+  }
+  return wrappedResult;
 }
 
 // Test case 1: No space after newline
@@ -28,7 +50,33 @@ expect(
 );
 
 // Add 4 more test cases
+expect(
+  wrapAfter40Chars(
+    ' '
+  ),
+  ' '
+);
 
+expect(
+  wrapAfter40Chars(
+    'qwertyuiopasdfghjklzxcvbnmqwertyuiopasdf'
+  ),
+  'qwertyuiopasdfghjklzxcvbnmqwertyuiopasdf\n'
+);
+
+expect(
+  wrapAfter40Chars(
+    'Hello My Name is Ashley Hynes and I\'m Learning How to Code'
+  ),
+  'Hello My Name is Ashley Hynes and I\'m Le\narning How to Code'
+);
+
+expect(
+  wrapAfter40Chars(
+    'Hello'
+  ),
+  'Hello'
+);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

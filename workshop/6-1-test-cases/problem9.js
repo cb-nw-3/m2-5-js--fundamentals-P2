@@ -12,10 +12,29 @@
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+  let currentLongestWord = '';
+  let words = str.split(' ');
+
+  words.forEach(wordChecker);
+
+  function wordChecker(word, index) {
+    //Check longest current word against the current word in loop
+
+    if (currentLongestWord.length <= word.length) {
+      currentLongestWord = word;
+    }
+  }
+
+  return currentLongestWord;
+
 }
 
 // We need 5 test cases
+expect(longestWord('testing this out'), 'testing');
+expect(longestWord('hi hi rains hello'), 'hello');
+expect(longestWord('hi hi rain hello'), 'hello');
+expect(longestWord('hello hello hello hello'), 'hello');
+expect(longestWord('a b c d e'), 'e');
 
 /**
  * -------------------------------------------------------------------

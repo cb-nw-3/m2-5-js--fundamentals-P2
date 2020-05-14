@@ -11,11 +11,32 @@
 // f(["foo", -1]) // ""
 
 function repeat(arr) {
-  // Your code here
+
+  charToRepeat = arr[0];
+  repeatNTimes = arr[1];
+
+  if (repeatNTimes < 1) {
+    //If a negative number or zero is specified, return an empty string.
+    return "";
+  } else if (repeatNTimes > 0) {
+    //function return the string repeated as many times as specified
+    return charToRepeat.repeat(repeatNTimes);
+  } else {
+    // If any invalid parameters are supplied return undefined.
+    return undefined
+  }
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+
+expect(repeat(['foo', 3]), 'foofoofoo');
+expect(repeat(['fo', 3]), 'fofofo');
+expect(repeat(['foo', -1]), '');
+expect(repeat([]), undefined);
+expect(repeat(['abc', 0]), '');
+expect(repeat(['abc', undefined]), undefined);
+expect(repeat(['hello', -3]), '');
 
 /**
  * -------------------------------------------------------------------

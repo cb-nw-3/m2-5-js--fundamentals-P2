@@ -7,10 +7,23 @@
 // JAVASCRIPT -> No
 
 function checkIsPalindrome(inputString) {
-  // Your code here
+
+  reverseString = inputString.split('').reverse().join('');
+
+  if (inputString == reverseString) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // Add 6 test cases
+expect(checkIsPalindrome('lol'), true);
+expect(checkIsPalindrome('not a palindrome'), false);
+expect(checkIsPalindrome('nope'), false);
+expect(checkIsPalindrome('My age is 0'), false);
+expect(checkIsPalindrome('race car'), false);
+expect(checkIsPalindrome('lol lol'), true);
 
 /**
  * -------------------------------------------------------------------

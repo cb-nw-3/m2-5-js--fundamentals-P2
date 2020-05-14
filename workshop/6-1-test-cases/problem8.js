@@ -14,10 +14,26 @@
 //  - Convert the filled array into a string (use the join method) and return it
 
 function reverse(str) {
-  // Your code here
+
+  let reverseString = '';
+
+  for (i = str.length; i > 0; i--) {
+    reverseString = reverseString + str[i - 1];
+  }
+
+
+  return reverseString
 }
 
+
 // We need 5 test cases
+expect(reverse('hello'), 'olleh');
+expect(reverse('ashley'), 'yelhsa');
+expect(reverse('54321'), '12345');
+expect(reverse(''), '');
+expect(reverse('TeStInG'), 'GnItSeT');
+
+
 
 /**
  * -------------------------------------------------------------------
