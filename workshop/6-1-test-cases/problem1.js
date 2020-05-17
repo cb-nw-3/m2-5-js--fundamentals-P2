@@ -6,8 +6,8 @@
 // If it's an empty string (''), return undefined.
 
 function firstLetter(str) {
-  /* Your code here */
-  return 5;
+  if (str.charAt(0) === '') return undefined;
+  else return str.charAt(0);
 }
 
 // Step 2
@@ -33,8 +33,6 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

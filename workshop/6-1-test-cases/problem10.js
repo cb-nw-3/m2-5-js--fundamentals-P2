@@ -11,7 +11,11 @@
 //  - Join the results into a string
 
 function makeIntoTitle(sentence) {
-  // Your code here
+  sentence = sentence.toLowerCase().split(' ');
+  for (let i = 0; i < sentence.length; i++) {
+    sentence[i] = sentence[i].charAt(0).toUpperCase() + sentence[i].slice(1);
+  }
+  return sentence.join(' ');
 }
 
 // Add 6 total (5 more)
@@ -19,6 +23,14 @@ expect(
   makeIntoTitle('the longest road is a great song'),
   'The Longest Road Is A Great Song'
 );
+expect(makeIntoTitle('hello wORLD!'), 'Hello World!');
+expect(makeIntoTitle('I ATE pizza for lunch.'), 'I Ate Pizza For Lunch.');
+expect(
+  makeIntoTitle('IS JAVAsCRIPT the most popular language in the world?'),
+  'Is Javascript The Most Popular Language In The World?'
+);
+expect(makeIntoTitle('doubleKILL'), 'Doublekill');
+expect(makeIntoTitle('foofoofoo'), 'Foofoofoo');
 
 /**
  * -------------------------------------------------------------------
@@ -29,8 +41,6 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

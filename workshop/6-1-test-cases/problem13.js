@@ -7,10 +7,20 @@
 // JAVASCRIPT -> No
 
 function checkIsPalindrome(inputString) {
-  // Your code here
+  let len = Math.floor(inputString.length / 2);
+  for (let i = 0; i < len; i++)
+    if (inputString[i] !== inputString[inputString.length - i - 1])
+      return false;
+  return true;
 }
 
 // Add 6 test cases
+expect(checkIsPalindrome('laval'), true);
+expect(checkIsPalindrome('Racecar'), false);
+expect(checkIsPalindrome('RaceCaR'), false);
+expect(checkIsPalindrome('bob'), true);
+expect(checkIsPalindrome('rob'), false);
+expect(checkIsPalindrome('montreal'), false);
 
 /**
  * -------------------------------------------------------------------
@@ -21,8 +31,6 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

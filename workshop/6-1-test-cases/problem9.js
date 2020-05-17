@@ -12,10 +12,28 @@
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+  let strSplit = str.split(' ');
+  let longestWordLength = 0;
+  let longestWord = '';
+  for (let i = 0; i < strSplit.length; i++) {
+    if (strSplit[i].length >= longestWordLength) {
+      longestWordLength = strSplit[i].length;
+      longestWord = strSplit[i];
+    }
+  }
+  return longestWord;
 }
 
 // We need 5 test cases
+
+expect(longestWord('I love hamburgers'), 'hamburgers');
+expect(longestWord('He drinks to much coffee'), 'coffee');
+expect(longestWord('What is the largest country in the world'), 'country');
+expect(
+  longestWord('How much did Louisiana cost to the americans'),
+  'americans'
+);
+expect(longestWord('What is my name'), 'name');
 
 /**
  * -------------------------------------------------------------------
@@ -26,8 +44,6 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

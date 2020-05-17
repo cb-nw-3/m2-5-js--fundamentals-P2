@@ -7,13 +7,23 @@ let verifyEquals = require('./verify-equals.js');
 // - If any element in the array is not a number, skip it.
 // - If no arguments are passed, return `undefined`
 
-function addNumbers(...nums) {
-  // Insert missing solution please
+function addNumbers(arr) {
+  if (arr === '') return undefined;
+  else {
+    let reducer = (a, b) => a ** 2 + b ** 2;
+    return arr.reduce(reducer);
+  }
 }
 
 // Add 7 more test cases.
-expect(addNumbers(1, 2, 3), 14); // 1 + 2**2 + 3**2 = 1 + 4 + 9 = 14
-
+expect(addNumbers([1, 2, 3]), 14); // 1 + 2**2 + 3**2 = 1 + 4 + 9 = 14
+expect(addNumbers(''), undefined);
+expect(addNumbers([1, 1]), 2);
+expect(addNumbers([1, 2, 2, 2, 2]), 17);
+expect(addNumbers([1, 0, 1]), 2);
+expect(addNumbers([0, 0, 0]), 0);
+expect(addNumbers([1]), 1);
+expect(addNumbers([6, 8]), 100);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

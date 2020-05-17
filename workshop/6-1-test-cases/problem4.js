@@ -9,12 +9,20 @@
 // getLetterAtIndex(["abc", 0]);   // a
 
 function getLetterAtIndex(arr) {
-  // Your code here
+  let letter = arr[0].charAt(arr[1]);
+  if (letter === '') return undefined;
+  else return letter;
 }
 
 // Add 6 more test cases
 expect(getLetterAtIndex(['hello', 4]), 'o');
 expect(getLetterAtIndex(['goodbye', 0]), 'g');
+expect(getLetterAtIndex(['', 5]), undefined);
+expect(getLetterAtIndex(['hamburger', 1000]), undefined);
+expect(getLetterAtIndex(['5', 0]), '5');
+expect(getLetterAtIndex(['sushi', 'u']), 2);
+expect(getLetterAtIndex(['pizza', 10]), undefined);
+expect(getLetterAtIndex(['salamanca', 8]), 'a');
 
 /**
  * -------------------------------------------------------------------
@@ -25,8 +33,6 @@ function expect(result, value) {
   if (result === value) {
     console.log('✅ Test succeeded');
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }
