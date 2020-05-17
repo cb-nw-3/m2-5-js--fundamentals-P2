@@ -7,13 +7,29 @@
 // HINT: You can use the typeof function to check the type of each element:
 //   - `typeof 3` returns 'number')
 
-function sumDigits(input) {
-  // Your code here
+function sumDigits(arr) {
+console.log(arr.length);
+console.log(typeof(arr[0]) === "number");
+console.log(typeof(arr[1]) === "number");
+
+if(arr.length === 2 &&
+  typeof(arr[0]) === "number" &&
+  typeof(arr[1]) === "number"){
+    return arr[0] + arr[1];
+  } else {
+    return undefined;
+  }
 }
 
 // Add 5 more test cases here! 7 total
 expect(sumDigits([2, 5]), 7);
 expect(sumDigits([-1, 0]), -1);
+expect(sumDigits([-1, 0, 8]), undefined);
+expect(sumDigits([-1, "d"]), undefined);
+expect(sumDigits([, 1]), undefined);
+expect(sumDigits([1, true]), undefined);
+expect(sumDigits([3, [2,3]]), undefined);
+
 
 /**
  * -------------------------------------------------------------------
