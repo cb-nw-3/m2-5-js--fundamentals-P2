@@ -11,7 +11,23 @@
 //  - Join the results into a string
 
 function makeIntoTitle(sentence) {
-  // Your code here
+
+  let words = sentence.split(' ');
+
+  let capitalizedArray = [];
+
+  words.forEach(capitalizedFirstLetter);
+
+  function capitalizedFirstLetter(word, index) {
+    //Capitalize word and add to sentence
+    let capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    capitalizedArray.push(capitalizedWord);
+
+
+  }
+
+  return capitalizedArray.join(' ');
+
 }
 
 // Add 6 total (5 more)
@@ -19,6 +35,32 @@ expect(
   makeIntoTitle('the longest road is a great song'),
   'The Longest Road Is A Great Song'
 );
+
+expect(
+  makeIntoTitle('HELLO FROM THE OTHER SIDE'),
+  'Hello From The Other Side'
+);
+
+expect(
+  makeIntoTitle('hi'),
+  'Hi'
+);
+
+expect(
+  makeIntoTitle('HIMYNAMEISASHLEY'),
+  'Himynameisashley'
+);
+
+expect(
+  makeIntoTitle('8 8 8 hello'),
+  '8 8 8 Hello'
+);
+
+expect(
+  makeIntoTitle(' '),
+  ' '
+);
+
 
 /**
  * -------------------------------------------------------------------
