@@ -31,25 +31,15 @@ btnArray.forEach(function (item) {
   item.addEventListener("click", buttonEvent);
 });
 
-console.log(btnArray[4]);
+//console.log(btnArray[4]);
 
 function buttonEvent() {
   switch (event.target.innerText) {
-    case "💨":
-      toggleEffect(event.target);
-      break;
-    case "😠":
-      toggleEffect(event.target);
-      break;
-    case "😭":
-      toggleEffect(event.target);
-      break;
-    case "🥴":
-      toggleEffect(event.target);
-      break;
     case "Reset":
       resetButtons();
       break;
+    default:
+      toggleEffect(event.target);
   }
 }
 
