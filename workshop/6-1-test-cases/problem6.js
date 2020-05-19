@@ -17,13 +17,35 @@
 // f(["spoof", 10, 10]); // undefined
 
 function calculator(arr) {
-  // Your code here
+  if (arr.length !== 3) {
+    return undefined;
+  } else if (arr[0] !== "add" && arr[0] !== "sub" && arr[0 !== "mult"]) {
+    return undefined;
+  } else if (typeof arr[1] !== "number" || typeof arr[2] !== "number"){
+    return undefined;
+  } else {
+    if (arr[0] === "add"){
+      return arr[1] + arr[2];
+    } else if (arr[0] === "mult"){
+      return arr[1] * arr[2];
+    } else if (arr[0] === "sub"){
+      return arr[1] - arr[2];
+    }
+  }
 }
 
 // Step 2
 // We need 8 total test cases. The first two is provided.
 expect(calculator(['mult', 2, 4]), 8);
 expect(calculator(['add', 2, 4]), 6);
+expect(calculator(['sub', 2, 4]), -2);
+expect(calculator(['divide', 2, 4]), undefined);
+expect(calculator(['add', 2, 4, 22]), undefined);
+expect(calculator(['add', 2, 's']), undefined);
+expect(calculator(['add', 'a', 10]), undefined);
+expect(calculator([,,]), undefined);
+
+
 
 /**
  * -------------------------------------------------------------------

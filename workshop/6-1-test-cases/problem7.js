@@ -9,13 +9,33 @@
 // f(["foo", 3]) // "foofoofoo"
 // f(["fo", 3]) // "fofofo"
 // f(["foo", -1]) // ""
-
 function repeat(arr) {
-  // Your code here
+  if (typeof(arr[0]) !== "string" || typeof(arr[1]) !== "number"){
+    return undefined;
+  } else if (arr[1] <= 0) {
+    return "";
+  } else {
+    let str = "";
+    for (let i = 1; i <= arr[1]; i++){
+      str = str + arr[0];
+    }
+    return str;
+  }
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+expect(repeat(["oompa loompa ", 2]), "oompa loompa oompa loompa ");
+expect(repeat(["oompa loompa ", 1]), "oompa loompa ");
+expect(repeat(["oompa loompa ", 0]), "");
+expect(repeat(["oompa loompa ", -1]), "");
+expect(repeat(["", 1]), "");
+expect(repeat(["oompa loompa ", "two"]), undefined);
+expect(repeat([32, 1]), undefined);
+
+
+
+
 
 /**
  * -------------------------------------------------------------------
