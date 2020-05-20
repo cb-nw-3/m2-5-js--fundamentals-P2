@@ -11,11 +11,40 @@
 //  - You'll need to use the split string method
 //  - `forEach` might be helpful
 
+function compare(a,b){
+  if(a.lgth>b.lgth) {return 1}
+  if(b.lgth>a.lgth) {return -1} 
+  else {return 0}
+}
+
 function longestWord(str) {
-  // Place solution here
+  if (typeof str !== "string"){
+    return undefined;
+  } else {
+
+  let wordArray = str.split(" ");
+  let objectArray = [];
+  for (let i = 0; i <= wordArray.length - 1; i++){
+    objectArray.push({
+      lgth: wordArray[i].length,
+      word: wordArray[i]
+    })
+  }
+
+  // let's sort and return this...
+  objectArray = objectArray.sort(compare);
+  return objectArray[objectArray.length - 1].word;
+}
 }
 
 // We need 5 test cases
+expect(longestWord(""), "");
+expect(longestWord("Hello my name is Alex"), "Hello");
+expect(longestWord("Hi Ok"), "Ok");
+expect(longestWord("supercalifragilisticexpialidocious"), "supercalifragilisticexpialidocious");
+expect(longestWord(true), undefined);
+
+
 
 /**
  * -------------------------------------------------------------------

@@ -14,11 +14,28 @@
 //  - Convert the filled array into a string (use the join method) and return it
 
 function reverse(str) {
-  // Your code here
+  if (typeof str === "string") {
+    if (str.length === 0) {
+      return "";
+    } else {
+      let charArr = str.split("");
+      let reversedCharArr = [];
+      for (let i = 0; i <= charArr.length - 1; i++){
+        reversedCharArr[charArr.length - 1 - i] = charArr[i];
+      }
+      return reversedCharArr.join("");
+    }
+  } else {
+    return undefined;
+  }
 }
-
 // We need 5 test cases
-
+// expect(reverse());
+expect(reverse("Hello"), "olleH" );
+expect(reverse("123"), "321" );
+expect(reverse(""), "" );
+expect(reverse(["Hello"]), undefined );
+expect(reverse(true), undefined );
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

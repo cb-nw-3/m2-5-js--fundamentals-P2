@@ -5,8 +5,9 @@
 // passed to it.
 // If it's an empty string (''), return undefined.
 
-function firstLetter(str) {
-  /* Your code here */
+function firstLetter(str) { 
+  // str is a string and not an array but this seems to be working. I probably should have used .charAt(0)
+  return str[0];
 }
 
 // Step 2
