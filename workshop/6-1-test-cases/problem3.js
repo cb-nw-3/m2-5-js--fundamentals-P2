@@ -20,12 +20,12 @@ function sumDigits(input) {
 }
 
 // Add 5 more test cases here! 7 total
-// expect(sumDigits([2, 5]), 7);
-// expect(sumDigits([-1, 0]), -1);
-// expect(sumDigits([55, 45]), 100);
-// expect(sumDigits([55, 45]), 90);
-// expect(sumDigits([70, 60]), 130);
-// expect(sumDigits([130]), 70, 60);
+expect(sumDigits([2, 5]), 7);
+expect(sumDigits([-1, 0]), -1);
+expect(sumDigits([55, 45]), 100);
+expect(sumDigits([55, 45]), 90);
+expect(sumDigits([70, 60]), 130);
+expect(sumDigits([130]), 70, 60);
 expect(sumDigits([-2, -4]), -6);
 
 /**

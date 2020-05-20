@@ -8,10 +8,23 @@
 // - To represent a newline character, you can use "\n".
 
 function wrapAfter40Chars(str) {
-  // Your code here!
+  const charArr = str.split('');
+  let res = '';
+
+  for (let i = 0; i < charArr.length; i++) {
+    if (i % 40 === 0 && i > 0) {
+      res += '\n';
+      if (charArr[i] !== ' ') {
+        res += charArr[i];
+      }
+    } else {
+      res += charArr[i];
+    }
+  }
+
+  return res;
 }
 
-// Test case 1: No space after newline
 expect(
   wrapAfter40Chars(
     'This is a very long string! It seems to go on forever. Sadly, it does not.'
@@ -27,6 +40,12 @@ expect(
   'My favourite thing about cats is all the\nthings.'
 );
 
+expect(
+  wrapAfter40Chars(
+    'My favourite thing about cats is all the things.'
+  ),
+  'My favourite thing about cats is all the\nthings.'
+);
 // Add 4 more test cases
 
 /**

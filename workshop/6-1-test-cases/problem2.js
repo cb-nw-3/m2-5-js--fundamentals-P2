@@ -8,25 +8,22 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  if (str.charAt(str.length - 1) === " ") return undefined;
-  return str.charAt(str.length - 1);
-
-  // }
-  // - If it's a number, return `undefined`????
-  // function lastCharacter(str) {
-  //   if (str.charAt(str.length - 1) === " ") return undefined;
-  //   if (typeof num !== "number") return undefined;
-  //   return str.charAt(str.length - 1);
+  let lastChar = str.charAt(str.length - 1);
+  if (lastChar === " ") return undefined;
+  let lastNum = parseInt(lastChar); //will check numbers that are integers/ use parseFloat for decimal nos.
+  if (!isNaN(lastNum)) return undefined;
+  return lastChar;
 }
 // Step 2
 // You're given 1 test case. Add 4 more, making sure to cover all of the
 // conditions specified above (don't forget empty string and number!!)
 
-// expect(lastCharacter("max"), "x");
+expect(lastCharacter("max"), "x");
 expect(lastCharacter("whimsical"), "l");
-// expect(lastCharacter(" "), "l");
-// expect(lastCharacter("33"), "3");
-// expect(lastCharacter(333), 3);
+expect(lastCharacter(" "), "l");
+expect(lastCharacter("33"), "3");
+expect(lastCharacter("serendipity "), "y");
+
 // Add 4 more test cases here!
 // Be creative with your tests!
 // There's an old joke about QA (Quality Assurance) testers:

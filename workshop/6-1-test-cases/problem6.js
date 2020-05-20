@@ -31,13 +31,13 @@ function calculator(arr) {
 }
 // Step 2
 // We need 8 total test cases. The first two are provided.
-// expect(calculator(["mult", 2, 4]), 8);
-// expect(calculator(["add", 2, 4]), 6);
-// expect(calculator(["sub", 6, 4]), 2);
-// expect(calculator(["spoof", 6, 4]), 2);
-// expect(calculator(["mult", 10, 10]), 100);
-// expect(calculator(["add", 100, 100]), 1000);
-// expect(calculator(["add", 100, 100]), 200);
+expect(calculator(["mult", 2, 4]), 8);
+expect(calculator(["add", 2, 4]), 6);
+expect(calculator(["sub", 6, 4]), 2);
+expect(calculator(["spoof", 6, 4]), 2);
+expect(calculator(["mult", 10, 10]), 100);
+expect(calculator(["add", 100, 100]), 1000);
+expect(calculator(["add", 100, 100]), 200);
 expect(calculator(["sub", 800, 100]), 700);
 
 /**

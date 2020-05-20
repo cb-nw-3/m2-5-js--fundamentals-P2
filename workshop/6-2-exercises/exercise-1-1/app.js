@@ -14,3 +14,20 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
+
+
+function hiddenButton() {
+button1.style.visibility = "hidden"
+}
+let button1 = document.getElementsById("btn-1");
+button.addEventListener ("click", hiddenButton);
+ 
+
+let button2 = document.getElementsById("btn-2");
+button.style.backgroundColor ="red";
+
+let button3 = document.getElementsById("btn-3");
+button.style.backgroundColor ="lightblue";
+
+let button4 = document.getElementsById("btn-4");
+button.classlist.add ("jitters");

@@ -15,12 +15,12 @@ function getLetterAtIndex(arr) {
 }
 
 // Add 6 more test cases
-// expect(getLetterAtIndex(["hello", 4]), "o");
-// expect(getLetterAtIndex(["goodbye", 0]), "g");
-// expect(getLetterAtIndex(["serendipty", 9]), "y");
-// expect(getLetterAtIndex(["World", 0]), "W");
-// expect(getLetterAtIndex(["", 4]), "");
-// expect(getLetterAtIndex(["", 4]));
+expect(getLetterAtIndex(["hello", 4]), "o");
+expect(getLetterAtIndex(["goodbye", 0]), "g");
+expect(getLetterAtIndex(["serendipty", 9]), "y");
+expect(getLetterAtIndex(["World", 0]), "W");
+expect(getLetterAtIndex(["", 4]), "");
+expect(getLetterAtIndex(["", 4]));
 expect(getLetterAtIndex(["silly", 1]), "i");
 /**
  * -------------------------------------------------------------------

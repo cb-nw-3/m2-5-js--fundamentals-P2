@@ -6,12 +6,12 @@
 // RADAR -> Yes
 // JAVASCRIPT -> No
 
-function checkIsPalindrome(inputString) {
-  // Your code here
+function palindrome(str) {
+  return str === str.split('').reverse().join('');
 }
 
 // Add 6 test cases
-
+expect(palindrome(madam), madam);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
