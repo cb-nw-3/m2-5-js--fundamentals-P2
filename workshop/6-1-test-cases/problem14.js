@@ -8,7 +8,21 @@
 // - To represent a newline character, you can use "\n".
 
 function wrapAfter40Chars(str) {
-  // Your code here!
+  if(typeof str !== "string"){
+    return undefined;
+  } else {
+    let charArray = str.split("");
+    for(let i = 0; i <= charArray.length - 1; i++){
+      if(i > 0 && i % 40 === 0){
+        if (charArray[i] === " "){
+          charArray.splice(i,1,"\n");
+        } else {
+          charArray.splice(i,0,"\n");
+        }
+      }
+    }
+    return charArray.join("");
+  }
 }
 
 // Test case 1: No space after newline
@@ -28,6 +42,14 @@ expect(
 );
 
 // Add 4 more test cases
+expect(wrapAfter40Chars(''),'');
+expect(wrapAfter40Chars(),undefined);
+expect(wrapAfter40Chars(55),undefined);
+expect(wrapAfter40Chars('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.'),
+'Lorem ipsum dolor sit amet, consectetuer\nadipiscing elit. Aenean commodo ligula \neget.');
+
+
+
 
 /**
  * -------------------------------------------------------------------

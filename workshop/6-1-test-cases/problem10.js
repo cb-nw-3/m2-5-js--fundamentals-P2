@@ -11,14 +11,27 @@
 //  - Join the results into a string
 
 function makeIntoTitle(sentence) {
-  // Your code here
+  if (typeof sentence !== "string") {
+    return undefined;
+  } else {
+    let wordArray = sentence.split(" ");
+    let capWordArray = [];
+    
+    for (let i = 0; i <= wordArray.length - 1; i++){
+      let word = wordArray[i].charAt(0).toUpperCase() + wordArray[i].slice(1).toLowerCase();
+      capWordArray.push(word);
+    }
+    return capWordArray.join(" ");
+  }
 }
 
 // Add 6 total (5 more)
-expect(
-  makeIntoTitle('the longest road is a great song'),
-  'The Longest Road Is A Great Song'
-);
+expect(makeIntoTitle('the longest road is a great song'), 'The Longest Road Is A Great Song');
+expect(makeIntoTitle("I LIKE SANDWICHES"), "I Like Sandwiches");
+expect(makeIntoTitle(""), "");
+expect(makeIntoTitle("!@#$"), "!@#$");
+expect(makeIntoTitle(35), undefined);
+expect(makeIntoTitle(true), undefined);
 
 /**
  * -------------------------------------------------------------------
