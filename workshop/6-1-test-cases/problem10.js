@@ -10,15 +10,36 @@
 //  - Iterate over each word, calling your "capitalize word" function
 //  - Join the results into a string
 
+function capitaliseFirstLetter(item) {
+  return item.charAt(0).toUpperCase() + item.substring(1);
+}
+
 function makeIntoTitle(sentence) {
-  // Your code here
+  if (sentence === "" || typeof sentence !== "string") {
+    return undefined;
+  } else {
+    let arr = sentence.toLowerCase().split(" ");
+    let capitalisedArray = arr.map(function (word) {
+      return capitaliseFirstLetter(word);
+    });
+    return capitalisedArray.join(" ");
+  }
 }
 
 // Add 6 total (5 more)
 expect(
-  makeIntoTitle('the longest road is a great song'),
-  'The Longest Road Is A Great Song'
+  makeIntoTitle("the longest road is a great song"),
+  "The Longest Road Is A Great Song"
 );
+
+expect(makeIntoTitle("ALL YOUR BASE ARE BELONG"), "All Your Base Are Belong");
+expect(makeIntoTitle(""), undefined);
+expect(makeIntoTitle(989122333), undefined);
+expect(
+  makeIntoTitle(["the", "longest", "road", "is", "a", "great", "song"]),
+  undefined
+);
+expect(makeIntoTitle("i'M a lITtlE teA p0t"), "I'm A Little Tea P0t");
 
 /**
  * -------------------------------------------------------------------
@@ -27,10 +48,8 @@ expect(
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }
