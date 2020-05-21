@@ -11,11 +11,26 @@
 // f(["foo", -1]) // ""
 
 function repeat(arr) {
-  // Your code here
+  if (
+    typeof arr[0] === "string" &&
+    typeof arr[1] === "number" &&
+    arr.length === 2
+  ) {
+    return arr[0].repeat(arr[1]);
+  } else {
+    return undefined;
+  }
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+expect(repeat(["mult", 2]), "multmult");
+expect(repeat(["foo", 3]), "foofoofoo");
+expect(repeat(["foo", 3]), "foofoofoo");
+expect(repeat(["mult", 2, 4]), undefined);
+expect(repeat([]), undefined);
+expect(repeat([2, 4]), undefined);
+expect(repeat([2, "mult", 4]), undefined);
 
 /**
  * -------------------------------------------------------------------
@@ -24,10 +39,8 @@ function repeat(arr) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

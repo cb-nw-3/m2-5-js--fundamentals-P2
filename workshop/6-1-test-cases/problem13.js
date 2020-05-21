@@ -7,10 +7,26 @@
 // JAVASCRIPT -> No
 
 function checkIsPalindrome(inputString) {
-  // Your code here
+  if (inputString === "" || typeof inputString !== "string") {
+    return undefined;
+  } else {
+    let reversedString = inputString.split("").reverse().join("");
+    if (inputString === reversedString) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 // Add 6 test cases
+expect(checkIsPalindrome("radar"), true);
+expect(checkIsPalindrome("javascript"), false);
+expect(checkIsPalindrome(""), undefined);
+expect(checkIsPalindrome(), undefined);
+expect(checkIsPalindrome("Radar"), false);
+expect(checkIsPalindrome(343), undefined);
+expect(checkIsPalindrome("343"), true);
 
 /**
  * -------------------------------------------------------------------
@@ -19,10 +35,8 @@ function checkIsPalindrome(inputString) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }
