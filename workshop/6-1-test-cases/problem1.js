@@ -7,7 +7,11 @@
 
 function firstLetter(str) {
   /* Your code here */
-  return 5;
+  if (str === '') {
+    return undefined;
+  }
+  return str.charAt(0);
+  
 }
 
 // Step 2

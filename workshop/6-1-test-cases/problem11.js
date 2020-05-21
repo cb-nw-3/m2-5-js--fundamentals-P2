@@ -8,12 +8,19 @@ let verifyEquals = require('./verify-equals.js');
 // - If no arguments are passed, return `undefined`
 
 function addNumbers(...nums) {
-  // Insert missing solution please
+let total = 0;
+  for (let i = 0; i < input.length; i++) {
+      total += input[i]*input[i];
+  }
+  return total;
 }
-
 // Add 7 more test cases.
 expect(addNumbers(1, 2, 3), 14); // 1 + 2**2 + 3**2 = 1 + 4 + 9 = 14
-
+expect(addNumbers(0,0,0), 10);expect(addNumbers(1, 2,"hi", 3), 14)
+expect(addNumbers(), undefined)
+expect(addNumbers('hello'), 0)
+expect(addNumbers('good morning', 3), 9)
+expect(addNumbers(-5), 2)
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

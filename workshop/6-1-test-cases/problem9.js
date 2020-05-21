@@ -12,10 +12,18 @@
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+ const words = str.split(' ');
+ let theLongestWord = '';
+
+ for (let i = 0; i < words.length; i++){
+ if (theLongestWord.length <= words[i].length)
+  theLongestWord = words[i];
+}
+return theLongestWord;
 }
 
 // We need 5 test cases
+expect(longestWord("i am good"),"good");
 
 /**
  * -------------------------------------------------------------------

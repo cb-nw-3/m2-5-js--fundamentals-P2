@@ -12,7 +12,19 @@
 
 function repeat(arr) {
   // Your code here
+  let string = arr[0]
+  let number = arr[1]
+  
+  if(b < 0) 
+    return "";
+  if(b === 1) 
+    return a ;
+  else 
+  return undefined;
 }
+
+
+
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters

@@ -10,12 +10,20 @@
 
 function getLetterAtIndex(arr) {
   // Your code here
+  let letter = arr[0].charAt(arr[1]);
+  if (letter === ''){
+    return undefined
+  }
+  return letter;
 }
 
 // Add 6 more test cases
 expect(getLetterAtIndex(['hello', 4]), 'o');
 expect(getLetterAtIndex(['goodbye', 0]), 'g');
-
+expect(getLetterAtIndex(['My name', 3]), 'n');
+expect(getLetterAtIndex(['whatever', 10]), 'r');
+expect(getLetterAtIndex(['goodmorning', 4]), 'm');
+expect(getLetterAtIndex(['nothing', 0]), 'g');
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

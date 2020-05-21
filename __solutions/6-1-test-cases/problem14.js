@@ -32,4 +32,5 @@ function f(str) {
       res += charArr[i];
     }
   }
+  return res;
 }

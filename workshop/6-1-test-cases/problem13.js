@@ -7,11 +7,16 @@
 // JAVASCRIPT -> No
 
 function checkIsPalindrome(inputString) {
-  // Your code here
-}
+  return inputString === inputString.split('').reverse().join('');
+}	
+
 
 // Add 6 test cases
-
+expect(checkIsPalindrome("waw"),true)
+expect(checkIsPalindrome("NAN"),true)
+expect(checkIsPalindrome("yes"),false)
+expect(checkIsPalindrome("121"),true)
+expect(checkIsPalindrome("mama"),false)
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

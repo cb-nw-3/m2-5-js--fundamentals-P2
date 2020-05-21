@@ -9,6 +9,10 @@
 
 function lastCharacter(str) {
   /* Your code here */
+  if(str === ''){
+  return undefined;
+  }
+return str.charAt(str.length - 1);
 }
 
 // Step 2
@@ -16,6 +20,10 @@ function lastCharacter(str) {
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
+expect(lastCharacter(''), undefined)
+expect(lastCharacter(10), undefined)
+expect(lastCharacter('dniaufnsuifndsuifsndufsdhndfsiuhfds'), undefined)
+expect(lastCharacter([]), undefined)
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠

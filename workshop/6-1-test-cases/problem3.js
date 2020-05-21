@@ -8,13 +8,21 @@
 //   - `typeof 3` returns 'number')
 
 function sumDigits(input) {
+  // Handle if input has 3 numbers instead of 2
   // Your code here
+  let a = input[0]
+  let b = input[1]
+  return a + b
 }
 
 // Add 5 more test cases here! 7 total
 expect(sumDigits([2, 5]), 7);
 expect(sumDigits([-1, 0]), -1);
-
+expect(sumDigits([1, 2]), 5);
+expect(sumDigits([-1, 1]), 0);
+expect(sumDigits([3, 3]), 6);
+expect(sumDigits([3, [2, 2]]), 7);
+expect(sumDigits([3, 0]), 5);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

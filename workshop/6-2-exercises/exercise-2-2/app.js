@@ -13,3 +13,13 @@
 // - one event listener per input
 
 // If you need extra hints, see somebody... :)
+
+let board = document.getElementById('board');
+let rowsInput = document.getElementById('rows-input');
+let columnsInput = document.getElementById('columns-input');
+
+let BoardSize = 600;
+let ROWS = 20;
+let COLUMNS = 20;
+
+board.style.height = board.style.width = `${BoardSize}px`;

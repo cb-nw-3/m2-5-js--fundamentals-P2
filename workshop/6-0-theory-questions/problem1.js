@@ -12,6 +12,7 @@ function duplicateString(x) {
     return x.concat(x);
 }
 
+
 function reverseString(str) {
     const splitString = str.split(""); // var splitString = "hello".split("");
     const reverseArray = splitString.reverse(); // var reverseArray = ["h", "e", "l", "l", "o"].reverse();
@@ -22,23 +23,22 @@ function reverseString(str) {
 // Q1
 square(decrement(square(decrement(3))));
 
-
+9
 
 
 // Q2
 decrement(decrement(square(square(3))));
 
-
+79
 
 
 // Q3
 duplicateString(reverseString("hello"));
 
-
+"olleholleh"
 
 
 // Q4
 reverseString(duplicateString(duplicateString("foo")));
 
-
-
+["oofoofoofoof"]

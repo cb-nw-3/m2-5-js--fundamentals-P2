@@ -7,8 +7,21 @@
 // - If the next character after a cut is a space, then do not display it.
 // - To represent a newline character, you can use "\n".
 
+
+// i will count only 10 character not 40
+
 function wrapAfter40Chars(str) {
-  // Your code here!
+ let wrapString = [];
+
+ while (str.length > 0 ){
+if (str[0] === ' '){
+str = str.slice(1);
+}
+let wraping = str.slice(0,10);
+wrapString.push(wraping);
+str = str.slice(10);
+ }
+ return wrapString.join('$')
 }
 
 // Test case 1: No space after newline
@@ -16,7 +29,7 @@ expect(
   wrapAfter40Chars(
     'This is a very long string! It seems to go on forever. Sadly, it does not.'
   ),
-  'This is a very long string! It seems to \ngo on forever. Sadly, it does not.'
+  'This is a \nvery long string! It seems to go on forever. Sadly, it does not.'
 );
 
 // Test case 2: Space after newline

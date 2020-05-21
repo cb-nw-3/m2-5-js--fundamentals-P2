@@ -15,9 +15,22 @@
 
 function reverse(str) {
   // Your code here
+  let arr = str.split("")
+  let reversedArr = []
+  let lastIndex = arr.length-1
+    for (let i = 0; i<arr.length; i++){
+    let element = arr[lastIndex-i]
+    reversedArr.push(element)
+  }
+  return reversedArr.join("")
 }
 
 // We need 5 test cases
+  expect(reverse ("hello"),"olleh")
+  expect(reverse ("how are you"),"woh era uoy")
+  expect(reverse ("good morning"),"gninrom doog")
+  expect(reverse ("super"),"repus")
+
 
 /**
  * -------------------------------------------------------------------

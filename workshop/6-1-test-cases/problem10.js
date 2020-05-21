@@ -11,7 +11,15 @@
 //  - Join the results into a string
 
 function makeIntoTitle(sentence) {
-  // Your code here
+  const words = sentence.split(' ');
+  const firstLetterCap = [];
+
+  for (let i = 0; i < words.length; i++){
+  const firstLetter = 
+  words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+  firstLetterCap.push(firstLetter);
+  }
+  return firstLetterCap.join(' ');
 }
 
 // Add 6 total (5 more)

@@ -18,7 +18,23 @@
 
 function calculator(arr) {
   // Your code here
+  let operation = arr[0]
+  let opr1 = arr[1]
+  let opr2 = arr[2]
+  switch (operation){
+  case 'add':
+    return opr1+opr2
+  case 'mult':
+      return opr1*opr2  
+  case 'sub':
+      return opr1-opr2
+  case 'div':
+      return opr1/opr2          
+  default:
+    return undefined
+  }
 }
+
 
 // Step 2
 // We need 8 total test cases. The first two is provided.
