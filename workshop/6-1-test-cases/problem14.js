@@ -1,4 +1,4 @@
-// Problem 14
+// Problem 14 NOT DONE
 // ----------
 // Make this function return the input string wrapped to 40 characters per line.
 // This means you'll have to insert a newline character after every 40
@@ -8,13 +8,13 @@
 // - To represent a newline character, you can use "\n".
 
 function wrapAfter40Chars(str) {
-  const charArr = str.split('');
-  let res = '';
+  const charArr = str.split("");
+  let res = "";
 
   for (let i = 0; i < charArr.length; i++) {
     if (i % 40 === 0 && i > 0) {
-      res += '\n';
-      if (charArr[i] !== ' ') {
+      res += "\n";
+      if (charArr[i] !== " ") {
         res += charArr[i];
       }
     } else {
@@ -27,24 +27,20 @@ function wrapAfter40Chars(str) {
 
 expect(
   wrapAfter40Chars(
-    'This is a very long string! It seems to go on forever. Sadly, it does not.'
+    "This is a very long string! It seems to go on forever. Sadly, it does not."
   ),
-  'This is a very long string! It seems to \ngo on forever. Sadly, it does not.'
+  "This is a very long string! It seems to \ngo on forever. Sadly, it does not."
 );
 
 // Test case 2: Space after newline
 expect(
-  wrapAfter40Chars(
-    'My favourite thing about cats is all the things.'
-  ),
-  'My favourite thing about cats is all the\nthings.'
+  wrapAfter40Chars("My favourite thing about cats is all the things."),
+  "My favourite thing about cats is all the\nthings."
 );
 
 expect(
-  wrapAfter40Chars(
-    'My favourite thing about cats is all the things.'
-  ),
-  'My favourite thing about cats is all the\nthings.'
+  wrapAfter40Chars("My favourite thing about cats is all the things."),
+  "My favourite thing about cats is all the\nthings."
 );
 // Add 4 more test cases
 
@@ -55,10 +51,8 @@ expect(
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }

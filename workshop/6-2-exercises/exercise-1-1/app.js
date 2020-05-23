@@ -15,19 +15,27 @@
 // - write only one event listener
 // - use a switch statement
 
+let myButtons = document.querySelector("#btn-list");
 
-function hiddenButton() {
-button1.style.visibility = "hidden"
+function clickEffects(event) {
+  let { target } = event; //same as let target = event.target
+  let btnId = target.id; //target is dom node for button I click on
+  switch (btnId) {
+    case "btn-1":
+      target.style.opacity = 0;
+      break;
+    case "btn-2":
+      target.style.background = "crimson";
+      break;
+    case "btn-3":
+      target.style.background = "lightblue";
+      break;
+    case "btn-4":
+      target.classList.add("jitters");
+      break;
+    default:
+      break;
+  }
 }
-let button1 = document.getElementsById("btn-1");
-button.addEventListener ("click", hiddenButton);
- 
 
-let button2 = document.getElementsById("btn-2");
-button.style.backgroundColor ="red";
-
-let button3 = document.getElementsById("btn-3");
-button.style.backgroundColor ="lightblue";
-
-let button4 = document.getElementsById("btn-4");
-button.classlist.add ("jitters");
+myButtons.addEventListener("click", clickEffects);
