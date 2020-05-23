@@ -10,16 +10,40 @@
 //  - Iterate over each word, calling your "capitalize word" function
 //  - Join the results into a string
 
+// this function is capitalizing
+ const capitalize = (word) =>
+    word.charAt(0).toUpperCase() +
+    word.slice(1).toLowerCase();
+
 function makeIntoTitle(sentence) {
-  // Your code here
+  let string = sentence.split(" ");  //space signifies split at space
+  
+ let theCapital = string.map(capitalize)
+ return theCapital.join(" ")
 }
+
 
 // Add 6 total (5 more)
 expect(
   makeIntoTitle('the longest road is a great song'),
   'The Longest Road Is A Great Song'
 );
-
+expect(
+  makeIntoTitle('the glass menagerie'),
+  'The Glass Menagerie'
+);
+expect(
+  makeIntoTitle('inglorious bastards'),
+  'Inglorious Bastards'
+);
+expect(
+  makeIntoTitle('django unchained'),
+  'Django Unchained'
+);
+expect(
+  makeIntoTitle('american pastoral by philip roth'),
+  'American Pastoral By Philip Roth'
+);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

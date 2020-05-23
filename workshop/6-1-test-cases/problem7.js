@@ -1,18 +1,31 @@
 // Problem 7
-// ---------
-// Step 1
-// - The function input is an array.
-// - The first element of the array is a string. The second is a number.
-// - Make this function return the string repeated as many times as specified by the second element of the array.
-// - If a negative number or zero is specified, return an empty string. If any invalid parameters are supplied return undefined.
+function accumulatorWords(arr) {
+  const [str,repeat] = arr;
+ 
+  if (typeof str !== "string" || typeof repeat !== "number") return undefined;
 
-// f(["foo", 3]) // "foofoofoo"
-// f(["fo", 3]) // "fofofo"
-// f(["foo", -1]) // ""
+  if (repeat <= 0) return "";
 
-function repeat(arr) {
-  // Your code here
+  let res = "";
+
+  for (let i = 0; i < repeat; i++) {
+    res += str ;
+  }
+  return res;
 }
+
+
+
+
+
+expect(accumulatorWords(["fo", 3]), "fofofo"); 
+
+expect(accumulatorWords(["foo", 3]), "foofoofoo");
+expect(accumulatorWords(["foo", 0]), "");
+expect(accumulatorWords(["hi", 4]), "hihihihi");
+expect(accumulatorWords(["hi", "there"]), "hithere");
+expect(accumulatorWords(["ga", 4]), "gagagaga");
+expect(accumulatorWords(["beat", 2]), "beatbeat");
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
@@ -24,10 +37,8 @@ function repeat(arr) {
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
-    console.log(
-      `⛔️ Expected “${result}” to equal “${value}”`
-    );
+    console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }
 }
