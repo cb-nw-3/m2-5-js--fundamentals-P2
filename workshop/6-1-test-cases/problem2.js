@@ -8,14 +8,23 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  /* Your code here */
+  // str.length-1 to get position of the last char.
+  if (str.charAt(str.lenght - 1) === '') {
+    return undefined;
+  } else {
+    return str.charAt(str.length - 1);
+  }
 }
-
 // Step 2
 // You're given 1 test case. Add 4 more, making sure to cover all of the
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
+
+expect(lastCharacter('Am I a long string???'), '?')
+expect(lastCharacter('How about white space '), ' ');
+expect(lastCharacter('2'), '2');
+expect(lastCharacter(''), undefined);
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠
