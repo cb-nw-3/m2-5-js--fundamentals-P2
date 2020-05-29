@@ -14,3 +14,29 @@
 // Guidelines
 // - write only one event listener
 // - use a switch statement
+
+const btnList = document.getElementById('btn-list');
+
+const handleClick = (item) => {
+  const btnId = item.target.id;
+  const btnEl = document.getElementById(btnId);
+
+  switch (btnId) {
+    case 'btn-1':
+      btnEl.style.opacity = 0;
+      break;
+    case 'btn-2':
+      btnEl.style.background = 'crimson';
+      break;
+    case 'btn-3':
+      btnEl.style.background = 'lightblue';
+      break;
+    case 'btn-4':
+      btnEl.classList.add('jitters');
+      break;
+    default:
+      break;
+  }
+}
+
+btnList.addEventListener('click', handleClick);
